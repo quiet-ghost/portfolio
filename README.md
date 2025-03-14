@@ -1,89 +1,95 @@
 # 🖥️ Programming Portfolio Website
 
-Welcome to my **Programming Portfolio**! This website showcases my projects, technical skills, and experience in software development. It serves as a central hub for potential employers, collaborators, and fellow developers to explore my work.
+Welcome to my **Programming Portfolio**! This website showcases my projects, technical skills, and experience in software development. It’s a central hub for potential employers, collaborators, and developers to explore my work, built with modern tools and deployed via GitLab.
 
 ## 🚀 Live Demo
 
-You can view the live version of my portfolio here: [Portfolio Link](https://yourportfolio.com)
+* Coming Soon *
+<!-- View the live version here: [Portfolio Link](https://<your-username>.gitlab.io/<repo-name>) *(Update after deployment)* -->
 
 ---
 
 ## 📌 About the Project
 
-This portfolio is a **fully responsive and dynamic** website designed to highlight my programming expertise. It provides an interactive and user-friendly experience, allowing visitors to explore my projects, skills, and professional background.
+This portfolio is a **fully responsive, dynamic website** designed to highlight my expertise in web development and automation. It’s built with Next.js and TypeScript, hosted on GitLab Pages, and powered by a GitLab Runner CI/CD pipeline.
 
 ### 🎯 **Key Objectives:**
 
-- Display my **software development projects** with detailed descriptions and links to source code.
-- Showcase my **technical skills**, frameworks, and tools.
-- Provide a brief **about me** section, including my career aspirations.
-- Include a **contact form** or direct links for potential employers or clients.
-- Optimize performance, accessibility, and SEO for better visibility.
+- Display my **software projects** with descriptions, live demos, and GitLab repo links.
+- Showcase my **technical skills** in TypeScript, Next.js, Tailwind CSS, SQL, and Python.
+- Provide an **About Me** section with my career goals and background.
+- Include a **contact form** for easy outreach.
+- Optimize for **performance, accessibility, and SEO**.
 
 ---
 
 ## ✨ Features
 
-✔ **Fully responsive design** – Works seamlessly across desktop, tablet, and mobile devices.  
-✔ **Modern UI/UX** – Clean, professional, and easy-to-navigate interface.  
-✔ **Dynamic project showcase** – Displays GitHub projects dynamically using API integration (optional).  
-✔ **Dark/Light Mode** – Toggle between light and dark themes.  
-✔ **Optimized for SEO** – Meta tags, Open Graph, and structured data for better search ranking.  
-✔ **Contact Form Integration** – Allows visitors to reach out via email.  
-✔ **Performance Optimizations** – Lazy loading, minified assets, and efficient rendering.
+✔ **Responsive Design** – Adapts to desktop, tablet, and mobile.  
+✔ **Modern UI/UX** – Clean and intuitive, styled with Tailwind CSS.  
+✔ **Dynamic Project Showcase** – Fetches GitLab repos via API (optional).  
+✔ **Dark/Light Mode** – Theme toggle with local storage.  
+✔ **SEO Optimized** – Meta tags and Open Graph for visibility.  
+✔ **Contact Form** – Handled via Next.js API routes with email integration.  
+✔ **CI/CD Automation** – Built and deployed with GitLab Runner and Docker.
 
 ---
-
- <!-- TODO: Adjust and change what development tools used. -->
 
 ## 🛠️ Built With
 
-This project is developed using modern web technologies:
+This project leverages my skills in modern web development:
 
 - **Frontend:**
+  - [Next.js](https://nextjs.org/) – React framework with TypeScript for SSG and API routes.
+  - [Tailwind CSS](https://tailwindcss.com/) – Utility-first styling.
+  - [Framer Motion](https://www.framer.com/motion/) – Smooth animations.
 
-  - HTML5, CSS3, JavaScript (ES6+)
-  - [React.js](https://react.dev/) / [Vue.js](https://vuejs.org/) (if applicable)
-  - [Tailwind CSS](https://tailwindcss.com/) / SCSS for styling
-  - [GSAP](https://greensock.com/gsap/) / Framer Motion for animations
+- **Backend:**
+  - **Next.js API Routes** – Type-safe endpoints for contact form and dynamic content.
+  - [Nodemailer](https://nodemailer.com/) – Email submission handling.
+  - *(Optional)* [Python](https://www.python.org/) with [FastAPI](https://fastapi.tiangolo.com/) – Standalone API if needed.
 
-- **Backend (Optional):**
+- **Database:**
+  - [SQLite](https://www.sqlite.org/) – Lightweight SQL database for form data or blog posts.
 
-  - [Node.js](https://nodejs.org/) with [Express.js](https://expressjs.com/)
-  - RESTful API for dynamic content fetching
-  - Contact form integration with **Nodemailer** or external API
-
-- **Database (Optional):**
-
-  - Firebase / MongoDB / PostgreSQL for handling contact form submissions or blog posts
-
-- **Deployment:**
-  - Hosted on **Vercel / Netlify / GitHub Pages**
-  - CI/CD pipeline with **GitHub Actions**
+- **DevOps & Deployment:**
+  - **GitLab Runner** – CI/CD pipeline with Docker executor.
+  - **GitLab Pages** – Static site hosting.
+  - [ESLint](https://eslint.org/) + [Prettier](https://prettier.io/) – Code quality tools.
+  - [Playwright](https://playwright.dev/) – End-to-end testing.
 
 ---
 
-<!-- ## 📂 Folder Structure
-
+## 📂 Folder Structure
 📂 portfolio-website
-│── 📁 public # Static assets (images, fonts, favicon)
-│── 📁 src
-│ ├── 📁 components # Reusable UI components
-│ ├── 📁 pages # Pages (Home, About, Projects, Contact)
-│ ├── 📁 styles # CSS / SCSS / Tailwind styles
-│ ├── 📁 utils # Utility functions (API calls, helpers)
-│ ├── 📄 App.js # Main application entry point
-│ ├── 📄 index.js # React / Vue root file
-│── 📄 package.json # Project dependencies and scripts
-│── 📄 README.md # Project documentation (this file)
-│── 📄 .gitignore # Git ignored files
+│── 📁 pages          # Next.js pages (Home, About, Projects, Contact)
+│   ├── 📁 api        # API routes (e.g., contact form)
+│── 📁 public         # Static assets (images, fonts, favicon)
+│── 📁 components     # Reusable UI components
+│── 📁 styles         # Tailwind CSS or global styles
+│── 📁 lib            # Utility functions (e.g., SQLite, API calls)
+│── 📄 .eslintrc.json # ESLint config
+│── 📄 .prettierrc    # Prettier config
+│── 📄 next.config.js # Next.js configuration
+│── 📄 tsconfig.json  # TypeScript configuration
+│── 📄 package.json   # Dependencies and scripts
+│── 📄 .gitlab-ci.yml # GitLab CI/CD pipeline
+│── 📄 README.md      # This file
+│── 📄 LICENSE.txt      # This file
+│── 📄 .gitignore     # Git ignored files
 
-📞 Contact
+---
+
+## 📞 Contact
 
 If you’d like to connect, feel free to reach out:
+ 
+🌐 Website: TBA 
+🐦 Twitter: @quietghosttv 
+💼 LinkedIn: linkedin.com/in/ksclafani  
 
-📧 Email: your.email@example.com
-🌐 Website: yourportfolio.com
-🐦 Twitter: @yourhandle
-💼 LinkedIn: linkedin.com/in/yourprofile
-⭐ Acknowledgments -->
+---
+
+## ⭐ Acknowledgments
+
+- Deployed with GitLab’s awesome CI/CD features.
