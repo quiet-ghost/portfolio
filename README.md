@@ -62,21 +62,21 @@ This project leverages my skills in modern web development:
 
 ## 📂 Folder Structure
 📂 portfolio-website<br>
-│── 📁 pages<br>          # Next.js pages (Home, About, Projects, Contact)
-│   ├── 📁 api<br>        # API routes (e.g., contact form)
-│── 📁 public<br>         # Static assets (images, fonts, favicon)
-│── 📁 components<br>     # Reusable UI components
-│── 📁 styles<br>         # Tailwind CSS or global styles
-│── 📁 lib<br>            # Utility functions (e.g., SQLite, API calls)
-│── 📄 .eslintrc.json<br> # ESLint config
-│── 📄 .prettierrc<br>    # Prettier config
-│── 📄 next.config.js<br> # Next.js configuration
-│── 📄 tsconfig.json<br>  # TypeScript configuration
-│── 📄 package.json<br>   # Dependencies and scripts
-│── 📄 .gitlab-ci.yml<br> # GitLab CI/CD pipeline
-│── 📄 README.md<br>      # This file
-│── 📄 LICENSE.txt<br>      # This file
-│── 📄 .gitignore<br>     # Git ignored files
+│── 📁 pages          # Next.js pages (Home, About, Projects, Contact)<br>
+│   ├── 📁 api        # API routes (e.g., contact form)<br>
+│── 📁 public         # Static assets (images, fonts, favicon)<br>
+│── 📁 components     # Reusable UI components<br>
+│── 📁 styles         # Tailwind CSS or global styles<br>
+│── 📁 lib            # Utility functions (e.g., SQLite, API calls)<br>
+│── 📄 .eslintrc.json # ESLint config<br>
+│── 📄 .prettierrc    # Prettier config<br>
+│── 📄 next.config.js # Next.js configuration<br>
+│── 📄 tsconfig.json  # TypeScript configuration<br>
+│── 📄 package.json   # Dependencies and scripts<br>
+│── 📄 .gitlab-ci.yml # GitLab CI/CD pipeline<br>
+│── 📄 README.md      # This file<br>
+│── 📄 LICENSE.txt      # This file<br>
+│── 📄 .gitignore     # Git ignored files<br>
 
 ---
 
