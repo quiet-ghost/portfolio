@@ -4,7 +4,7 @@ Welcome to my **Programming Portfolio**! This website showcases my projects, tec
 
 ## 🚀 Live Demo
 
-* Coming Soon *
+*  **Coming Soon**
 <!-- View the live version here: [Portfolio Link](https://<your-username>.gitlab.io/<repo-name>) *(Update after deployment)* -->
 
 ---
@@ -47,7 +47,7 @@ This project leverages my skills in modern web development:
 - **Backend:**
   - **Next.js API Routes** – Type-safe endpoints for contact form and dynamic content.
   - [Nodemailer](https://nodemailer.com/) – Email submission handling.
-  - *(Optional)* [Python](https://www.python.org/) with [FastAPI](https://fastapi.tiangolo.com/) – Standalone API if needed.
+  - [Python](https://www.python.org/) with [FastAPI](https://fastapi.tiangolo.com/) – Standalone API if needed.
 
 - **Database:**
   - [SQLite](https://www.sqlite.org/) – Lightweight SQL database for form data or blog posts.
@@ -62,21 +62,21 @@ This project leverages my skills in modern web development:
 
 ## 📂 Folder Structure
 📂 portfolio-website<br>
-│── 📁 pages          # Next.js pages (Home, About, Projects, Contact)<br>
-│   ├── 📁 api        # API routes (e.g., contact form)<br>
-│── 📁 public         # Static assets (images, fonts, favicon)<br>
-│── 📁 components     # Reusable UI components<br>
-│── 📁 styles         # Tailwind CSS or global styles<br>
-│── 📁 lib            # Utility functions (e.g., SQLite, API calls)<br>
-│── 📄 .eslintrc.json # ESLint config<br>
-│── 📄 .prettierrc    # Prettier config<br>
-│── 📄 next.config.js # Next.js configuration<br>
-│── 📄 tsconfig.json  # TypeScript configuration<br>
-│── 📄 package.json   # Dependencies and scripts<br>
-│── 📄 .gitlab-ci.yml # GitLab CI/CD pipeline<br>
-│── 📄 README.md      # This file<br>
-│── 📄 LICENSE.txt      # This file<br>
-│── 📄 .gitignore     # Git ignored files<br>
+│── 📁 pages          <br>
+│   ├── 📁 api        <br>
+│── 📁 public         <br>
+│── 📁 components     <br>
+│── 📁 styles         <br>
+│── 📁 lib            <br>
+│── 📄 .eslintrc.json <br>
+│── 📄 .prettierrc    <br>
+│── 📄 next.config.js <br>
+│── 📄 tsconfig.json  <br>
+│── 📄 package.json   <br>
+│── 📄 .gitlab-ci.yml <br>
+│── 📄 README.md      <br>
+│── 📄 LICENSE.txt    <br>
+│── 📄 .gitignore     <br>
 
 ---
 
