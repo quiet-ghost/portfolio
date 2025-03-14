@@ -58,7 +58,7 @@ This project leverages my skills in modern web development:
   - [ESLint](https://eslint.org/) + [Prettier](https://prettier.io/) – Code quality tools.
   - [Playwright](https://playwright.dev/) – End-to-end testing.
 
----
+<!-- ---
 
 ## 📂 Folder Structure
 📂 portfolio-website
@@ -76,18 +76,7 @@ This project leverages my skills in modern web development:
 │── 📄 .gitlab-ci.yml # GitLab CI/CD pipeline
 │── 📄 README.md      # This file
 │── 📄 LICENSE.txt      # This file
-│── 📄 .gitignore     # Git ignored files
-
-
-
-
-
-
-
-
-
-
-
+│── 📄 .gitignore     # Git ignored files -->
 
 ---
 
