@@ -78,6 +78,17 @@ This project leverages my skills in modern web development:
 │── 📄 LICENSE.txt      # This file
 │── 📄 .gitignore     # Git ignored files
 
+
+
+
+
+
+
+
+
+
+
+
 ---
 
 ## 📞 Contact
