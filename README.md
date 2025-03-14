@@ -61,22 +61,22 @@ This project leverages my skills in modern web development:
 ---
 
 ## 📂 Folder Structure
-📂 portfolio-website__
-│── 📁 pages__          # Next.js pages (Home, About, Projects, Contact)
-│   ├── 📁 api__        # API routes (e.g., contact form)
-│── 📁 public__         # Static assets (images, fonts, favicon)
-│── 📁 components__     # Reusable UI components
-│── 📁 styles__         # Tailwind CSS or global styles
-│── 📁 lib__            # Utility functions (e.g., SQLite, API calls)
-│── 📄 .eslintrc.json__ # ESLint config
-│── 📄 .prettierrc__    # Prettier config
-│── 📄 next.config.js__ # Next.js configuration
-│── 📄 tsconfig.json__  # TypeScript configuration
-│── 📄 package.json__   # Dependencies and scripts
-│── 📄 .gitlab-ci.yml__ # GitLab CI/CD pipeline
-│── 📄 README.md__      # This file
-│── 📄 LICENSE.txt__      # This file
-│── 📄 .gitignore__     # Git ignored files
+📂 portfolio-website<br>
+│── 📁 pages<br>          # Next.js pages (Home, About, Projects, Contact)
+│   ├── 📁 api<br>        # API routes (e.g., contact form)
+│── 📁 public<br>         # Static assets (images, fonts, favicon)
+│── 📁 components<br>     # Reusable UI components
+│── 📁 styles<br>         # Tailwind CSS or global styles
+│── 📁 lib<br>            # Utility functions (e.g., SQLite, API calls)
+│── 📄 .eslintrc.json<br> # ESLint config
+│── 📄 .prettierrc<br>    # Prettier config
+│── 📄 next.config.js<br> # Next.js configuration
+│── 📄 tsconfig.json<br>  # TypeScript configuration
+│── 📄 package.json<br>   # Dependencies and scripts
+│── 📄 .gitlab-ci.yml<br> # GitLab CI/CD pipeline
+│── 📄 README.md<br>      # This file
+│── 📄 LICENSE.txt<br>      # This file
+│── 📄 .gitignore<br>     # Git ignored files
 
 ---
 
@@ -84,9 +84,9 @@ This project leverages my skills in modern web development:
 
 If you’d like to connect, feel free to reach out:
  
-🌐 Website: TBA__ 
-🐦 Twitter: @quietghosttv__ 
-💼 LinkedIn: linkedin.com/in/ksclafani__  
+🌐 Website: TBA<br> 
+🐦 Twitter: @quietghosttv<br> 
+💼 LinkedIn: linkedin.com/in/ksclafani<br>  
 
 ---
 
