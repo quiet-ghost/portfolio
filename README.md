@@ -58,25 +58,25 @@ This project leverages my skills in modern web development:
   - [ESLint](https://eslint.org/) + [Prettier](https://prettier.io/) – Code quality tools.
   - [Playwright](https://playwright.dev/) – End-to-end testing.
 
-<!-- ---
+---
 
 ## 📂 Folder Structure
-📂 portfolio-website
-│── 📁 pages          # Next.js pages (Home, About, Projects, Contact)
-│   ├── 📁 api        # API routes (e.g., contact form)
-│── 📁 public         # Static assets (images, fonts, favicon)
-│── 📁 components     # Reusable UI components
-│── 📁 styles         # Tailwind CSS or global styles
-│── 📁 lib            # Utility functions (e.g., SQLite, API calls)
-│── 📄 .eslintrc.json # ESLint config
-│── 📄 .prettierrc    # Prettier config
-│── 📄 next.config.js # Next.js configuration
-│── 📄 tsconfig.json  # TypeScript configuration
-│── 📄 package.json   # Dependencies and scripts
-│── 📄 .gitlab-ci.yml # GitLab CI/CD pipeline
-│── 📄 README.md      # This file
-│── 📄 LICENSE.txt      # This file
-│── 📄 .gitignore     # Git ignored files -->
+📂 portfolio-website__
+│── 📁 pages__          # Next.js pages (Home, About, Projects, Contact)
+│   ├── 📁 api__        # API routes (e.g., contact form)
+│── 📁 public__         # Static assets (images, fonts, favicon)
+│── 📁 components__     # Reusable UI components
+│── 📁 styles__         # Tailwind CSS or global styles
+│── 📁 lib__            # Utility functions (e.g., SQLite, API calls)
+│── 📄 .eslintrc.json__ # ESLint config
+│── 📄 .prettierrc__    # Prettier config
+│── 📄 next.config.js__ # Next.js configuration
+│── 📄 tsconfig.json__  # TypeScript configuration
+│── 📄 package.json__   # Dependencies and scripts
+│── 📄 .gitlab-ci.yml__ # GitLab CI/CD pipeline
+│── 📄 README.md__      # This file
+│── 📄 LICENSE.txt__      # This file
+│── 📄 .gitignore__     # Git ignored files
 
 ---
 
@@ -84,9 +84,9 @@ This project leverages my skills in modern web development:
 
 If you’d like to connect, feel free to reach out:
  
-🌐 Website: TBA 
-🐦 Twitter: @quietghosttv 
-💼 LinkedIn: linkedin.com/in/ksclafani  
+🌐 Website: TBA__ 
+🐦 Twitter: @quietghosttv__ 
+💼 LinkedIn: linkedin.com/in/ksclafani__  
 
 ---
 
