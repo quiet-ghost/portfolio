@@ -13,8 +13,8 @@ export function Education() {
   const [showCert, setShowCert] = useState(false);
 
   return (
-    <Section id="education" className="container mx-auto px-4 py-20 bg-zinc-900/90 rounded-2xl shadow-lg mb-12">
-      <div className="max-w-3xl mx-auto">
+    <Section id="education" className="max-w-3xl mx-auto">
+      <div className="">
         <h2 className="text-3xl font-bold mb-12 text-cyan-400">Education & Certifications</h2>
         <div className="relative">
           {/* Main vertical line */}

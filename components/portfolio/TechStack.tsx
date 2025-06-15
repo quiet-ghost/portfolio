@@ -12,6 +12,7 @@ const techList = [
   { name: "Python", category: "Backend", icon: "/techstack/Python.svg" },
   { name: "SQL", category: "Database", icon: "/techstack/MySQL.svg" },
   { name: "C++", category: "Backend", icon: "/techstack/C++ (CPlusPlus).svg" },
+  { name: "Supabase", category: "Database", icon: "/techstack/supabase-logo-icon.svg" },
 ];
 
 const techCategories = [

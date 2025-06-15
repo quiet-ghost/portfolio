@@ -6,8 +6,8 @@ import { Section } from "./Section";
 
 export function Projects() {
   return (
-    <Section id="projects" className="container mx-auto px-4 py-20 bg-zinc-900/90 rounded-2xl shadow-lg mb-12">
-      <div className="max-w-4xl mx-auto">
+    <Section id="projects" className="max-w-4xl mx-auto">
+      <div className="">
         <h2 className="text-3xl font-bold mb-8 text-cyan-400">Featured Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <motion.div
