@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { render } from "@react-email/render";
 import { AutoReplyTemplate } from "@/components/AutoReplyTemplate";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -22,12 +23,17 @@ export async function POST(req: Request) {
       `,
     });
 
+    // Pre-render AutoReplyTemplate to HTML
+    const emailHtml = render(AutoReplyTemplate({ name, message }), {
+      pretty: true,
+    });
+
     // Send auto-reply to the employer
     await resend.emails.send({
       from: "Portfolio Contact <contact@contact.quietghost.dev>",
       to: email,
       subject: "Thank You for Your Message!",
-      react: AutoReplyTemplate({ name, message }),
+      html: emailHtml,
     });
 
     return NextResponse.json({ success: true });
