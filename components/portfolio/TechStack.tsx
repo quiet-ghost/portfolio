@@ -1,18 +1,18 @@
-import Image from "next/image";
+import { Icon } from "@iconify/react";
 import { useState } from "react";
 import { Section } from "./Section";
 
 const techList = [
-  { name: "Next.js", category: "Frontend", icon: "/techstack/Next.js.svg" },
-  { name: "React", category: "Frontend", icon: "/techstack/React.svg" },
-  { name: "Tailwind CSS", category: "Frontend", icon: "/techstack/Tailwind CSS.svg" },
-  { name: "TypeScript", category: "Frontend", icon: "/techstack/TypeScript.svg" },
-  { name: "JavaScript", category: "Frontend", icon: "/techstack/JavaScript.svg" },
-  { name: "Java", category: "Backend", icon: "/techstack/Java.svg" },
-  { name: "Python", category: "Backend", icon: "/techstack/Python.svg" },
-  { name: "SQL", category: "Database", icon: "/techstack/MySQL.svg" },
-  { name: "C++", category: "Backend", icon: "/techstack/C++ (CPlusPlus).svg" },
-  { name: "Supabase", category: "Database", icon: "/techstack/supabase-logo-icon.svg" },
+  { name: "Next.js", category: "Frontend", icon: "devicon:nextjs" },
+  { name: "React", category: "Frontend", icon: "devicon:react" },
+  { name: "Tailwind CSS", category: "Frontend", icon: "devicon:tailwindcss" },
+  { name: "TypeScript", category: "Frontend", icon: "devicon:typescript" },
+  { name: "JavaScript", category: "Frontend", icon: "devicon:javascript" },
+  { name: "Java", category: "Backend", icon: "devicon:java" },
+  { name: "Python", category: "Backend", icon: "devicon:python" },
+  { name: "SQL", category: "Database", icon: "devicon:mysql" },
+  { name: "C++", category: "Backend", icon: "devicon:cplusplus" },
+  { name: "Supabase", category: "Database", icon: "devicon:supabase" },
 ];
 
 const techCategories = [
@@ -50,7 +50,7 @@ export function TechStack() {
             key={tech.name}
             className="flex items-center gap-3 rounded-xl bg-zinc-900/80 border border-cyan-700/30 shadow-lg shadow-cyan-500/10 p-4 text-zinc-100 font-medium text-lg backdrop-blur hover:scale-105 hover:shadow-cyan-400/30 transition-transform duration-200"
           >
-            <Image src={tech.icon} alt={tech.name + ' icon'} width={32} height={32} className="w-8 h-8" />
+            <Icon icon={tech.icon} width={32} height={32} className="w-8 h-8" />
             <span>{tech.name}</span>
           </div>
         ))}
