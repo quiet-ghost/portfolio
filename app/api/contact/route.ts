@@ -1,12 +1,11 @@
-import { AutoReplyTemplate } from "@/components/AutoReplyTemplate";
-import { renderAsync } from "@react-email/render";
+export const runtime = "nodejs";
+
 import { NextResponse } from "next/server";
-import type { ReactElement } from "react";
 import { Resend } from "resend";
+import { render } from "@react-email/render";
+import { AutoReplyTemplate } from "@/components/AutoReplyTemplate";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-
-export const runtime = 'edge';
 
 export async function POST(req: Request) {
   try {
@@ -26,13 +25,10 @@ export async function POST(req: Request) {
       `,
     });
 
-    // Pre-render AutoReplyTemplate to HTML
-    const emailHtml = await renderAsync(
-      AutoReplyTemplate({ name, message }) as ReactElement,
-      {
-        pretty: true,
-      }
-    );
+    // Pre-render AutoReplyTemplate to HTML with type assertion
+    const emailHtml = (await render(
+      AutoReplyTemplate({ name, message }),
+    )) as string;
 
     // Send auto-reply to the employer
     await resend.emails.send({
@@ -51,4 +47,3 @@ export async function POST(req: Request) {
     );
   }
 }
-
