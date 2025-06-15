@@ -1,16 +1,16 @@
-export const runtime = 'edge';
-
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { AutoReplyTemplate } from "@/components/AutoReplyTemplate";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
-  const { name, email, message } = await req.json();
-
   try {
+    const { name, email, message } = await req.json();
+
+    // Send email to portfolio owner
     await resend.emails.send({
-      from: `Your Portfolio <${email}>`,
+      from: "Portfolio Contact <contact@contact.quietghost.dev>",
       to: "quietghosttv@pm.me",
       subject: `New Contact Form Message from ${name}`,
       replyTo: email,
@@ -22,8 +22,21 @@ export async function POST(req: Request) {
       `,
     });
 
+    // Send auto-reply to the employer
+    await resend.emails.send({
+      from: "Portfolio Contact <contact@contact.quietghost.dev>",
+      to: email,
+      subject: "Thank You for Your Message!",
+      react: AutoReplyTemplate({ name, message }),
+    });
+
     return NextResponse.json({ success: true });
   } catch (error) {
-    return NextResponse.json({ success: false, error: (error as Error).message }, { status: 500 });
+    console.error("Error sending email:", error);
+    return NextResponse.json(
+      { success: false, error: (error as Error).message },
+      { status: 500 },
+    );
   }
 }
+

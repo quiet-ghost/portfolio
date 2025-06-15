@@ -1,13 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowDown, Code, Coffee, Database, Download, ExternalLink, GraduationCap, X } from "lucide-react";
+import {
+  ArrowDown,
+  Code,
+  Coffee,
+  Database,
+  Download,
+  ExternalLink,
+  GraduationCap,
+  X,
+} from "lucide-react";
 import { useState } from "react";
 import { Section } from "./Section";
 
 const CERT_TITLE = "Python Programming Certification";
 const CERT_PROVIDER = "Zero to Mastery";
 const CERT_DATE = "Summer 2025";
-const CERT_PNG = "/public/Certificates/python-cert-1.png";
+const CERT_PNG = "/Certificates/python-cert-1.png"; // Corrected path
 
 export function Education() {
   const [showCert, setShowCert] = useState(false);
@@ -15,7 +24,9 @@ export function Education() {
   return (
     <Section id="education" className="max-w-3xl mx-auto">
       <div className="">
-        <h2 className="text-3xl font-bold mb-12 text-cyan-400">Education & Certifications</h2>
+        <h2 className="text-3xl font-bold mb-12 text-cyan-400">
+          Education & Certifications
+        </h2>
         <div className="relative">
           {/* Main vertical line */}
           <div className="absolute left-7 top-0 bottom-0 w-0.5 bg-cyan-400/30 z-0" />
@@ -35,12 +46,18 @@ export function Education() {
               <div className="bg-zinc-800/80 backdrop-blur rounded-xl border border-cyan-400/20 shadow-cyan-400/10 shadow-lg p-4 w-full">
                 <div className="flex justify-between items-center">
                   <div>
-                    <h3 className="text-lg font-semibold text-cyan-400">Web Development 1</h3>
-                    <p className="text-zinc-400 text-sm">Gwinnett Technical College</p>
+                    <h3 className="text-lg font-semibold text-cyan-400">
+                      Web Development 1
+                    </h3>
+                    <p className="text-zinc-400 text-sm">
+                      Gwinnett Technical College
+                    </p>
                   </div>
                   <span className="text-zinc-400 text-xs">Fall 2024</span>
                 </div>
-                <p className="text-zinc-300 text-sm mt-1">Intro to web development fundamentals and modern practices.</p>
+                <p className="text-zinc-300 text-sm mt-1">
+                  Intro to web development fundamentals and modern practices.
+                </p>
               </div>
             </div>
             {/* SQL and Python */}
@@ -51,12 +68,18 @@ export function Education() {
               <div className="bg-zinc-800/80 backdrop-blur rounded-xl border border-cyan-400/20 shadow-cyan-400/10 shadow-lg p-4 w-full">
                 <div className="flex justify-between items-center">
                   <div>
-                    <h3 className="text-lg font-semibold text-cyan-400">SQL and Python</h3>
-                    <p className="text-zinc-400 text-sm">Gwinnett Technical College</p>
+                    <h3 className="text-lg font-semibold text-cyan-400">
+                      SQL and Python
+                    </h3>
+                    <p className="text-zinc-400 text-sm">
+                      Gwinnett Technical College
+                    </p>
                   </div>
                   <span className="text-zinc-400 text-xs">Spring 2025</span>
                 </div>
-                <p className="text-zinc-300 text-sm mt-1">Database management and Python programming fundamentals.</p>
+                <p className="text-zinc-300 text-sm mt-1">
+                  Database management and Python programming fundamentals.
+                </p>
               </div>
             </div>
             {/* ZTM Python Course (Branch) */}
@@ -67,15 +90,28 @@ export function Education() {
               <div className="bg-zinc-800/80 backdrop-blur rounded-xl border border-cyan-400/20 shadow-cyan-400/10 shadow-lg p-4 w-full">
                 <div className="flex justify-between items-center">
                   <div>
-                    <h3 className="text-lg font-semibold text-cyan-400">Python Programming</h3>
+                    <h3 className="text-lg font-semibold text-cyan-400">
+                      Python Programming
+                    </h3>
                     <p className="text-zinc-400 text-sm">Zero to Mastery</p>
                   </div>
                   <span className="text-zinc-400 text-xs">Spring 2025</span>
                 </div>
-                <p className="text-zinc-300 text-sm mt-1">Started comprehensive Python programming course.</p>
+                <p className="text-zinc-300 text-sm mt-1">
+                  Started comprehensive Python programming course.
+                </p>
                 <div className="flex justify-center gap-2 mt-2">
-                  <Button variant="ghost" size="sm" className="text-zinc-400 hover:text-cyan-400 hover:bg-zinc-900/60" asChild>
-                    <a href="https://zerotomastery.io/courses/learn-python/" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-zinc-400 hover:text-cyan-400 hover:bg-zinc-900/60"
+                    asChild
+                  >
+                    <a
+                      href="https://zerotomastery.io/courses/learn-python/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <ExternalLink className="h-4 w-4 mr-1" />
                       View Course
                     </a>
@@ -91,12 +127,18 @@ export function Education() {
               <div className="bg-zinc-800/80 backdrop-blur rounded-xl border border-cyan-400/20 shadow-cyan-400/10 shadow-lg p-4 w-full">
                 <div className="flex justify-between items-center">
                   <div>
-                    <h3 className="text-lg font-semibold text-cyan-400">Java Programming 1</h3>
-                    <p className="text-zinc-400 text-sm">Gwinnett Technical College</p>
+                    <h3 className="text-lg font-semibold text-cyan-400">
+                      Java Programming 1
+                    </h3>
+                    <p className="text-zinc-400 text-sm">
+                      Gwinnett Technical College
+                    </p>
                   </div>
                   <span className="text-zinc-400 text-xs">Summer 2025</span>
                 </div>
-                <p className="text-zinc-300 text-sm mt-1">Current semester: Fundamentals of Java programming and OOP.</p>
+                <p className="text-zinc-300 text-sm mt-1">
+                  Current semester: Fundamentals of Java programming and OOP.
+                </p>
               </div>
             </div>
             {/* ZTM Python Course Completion (Merge) */}
@@ -107,14 +149,23 @@ export function Education() {
               <div className="bg-zinc-800/80 backdrop-blur rounded-xl border border-cyan-400/20 shadow-cyan-400/10 shadow-lg p-4 w-full">
                 <div className="flex justify-between items-center">
                   <div>
-                    <h3 className="text-lg font-semibold text-cyan-400">Python Programming Certification</h3>
+                    <h3 className="text-lg font-semibold text-cyan-400">
+                      Python Programming Certification
+                    </h3>
                     <p className="text-zinc-400 text-sm">Zero to Mastery</p>
                   </div>
                   <span className="text-zinc-400 text-xs">Summer 2025</span>
                 </div>
-                <p className="text-zinc-300 text-sm mt-1">Completed comprehensive Python programming course.</p>
+                <p className="text-zinc-300 text-sm mt-1">
+                  Completed comprehensive Python programming course.
+                </p>
                 <div className="flex justify-center gap-2 mt-2">
-                  <Button variant="ghost" size="sm" className="text-zinc-400 hover:text-cyan-400 hover:bg-zinc-900/60" onClick={() => setShowCert(true)}>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-zinc-400 hover:text-cyan-400 hover:bg-zinc-900/60"
+                    onClick={() => setShowCert(true)}
+                  >
                     <ArrowDown className="h-4 w-4 mr-1" />
                     View Certificate
                   </Button>
@@ -138,19 +189,26 @@ export function Education() {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.95, opacity: 0 }}
                 className="relative bg-zinc-900/95 border border-cyan-400/30 rounded-3xl shadow-2xl max-w-3xl w-full overflow-hidden flex flex-col items-center"
-                onClick={e => e.stopPropagation()}
+                onClick={(e) => e.stopPropagation()}
               >
                 {/* Modal Header */}
                 <div className="w-full px-6 pt-6 pb-2 bg-zinc-900/90 border-b border-cyan-700/30">
-                  <h3 className="text-2xl font-bold text-cyan-400 mb-1">{CERT_TITLE}</h3>
-                  <p className="text-zinc-400 text-base">{CERT_PROVIDER} • {CERT_DATE}</p>
+                  <h3 className="text-2xl font-bold text-cyan-400 mb-1">
+                    {CERT_TITLE}
+                  </h3>
+                  <p className="text-zinc-400 text-base">
+                    {CERT_PROVIDER} • {CERT_DATE}
+                  </p>
                 </div>
-                {/* Certificate PDF */}
-                <div className="flex-1 w-full flex justify-center items-center bg-zinc-900/80 p-4">
-                  <iframe
+                {/* Certificate Image */}
+                <div className="flex-1 w-full flex justify-center items-center bg-zinc-800/80 p-4">
+                  <img
                     src={CERT_PNG}
-                    title={CERT_TITLE}
-                    className="w-full h-[70vh] rounded-lg border border-cyan-400/20 bg-zinc-800"
+                    alt={CERT_TITLE}
+                    className="w-full max-h-[70vh] object-contain rounded-lg border border-cyan-400/20"
+                    onError={() =>
+                      console.error("Failed to load certificate image")
+                    }
                   />
                 </div>
                 {/* Modal Footer */}
@@ -179,4 +237,5 @@ export function Education() {
       </div>
     </Section>
   );
-} 
+}
+
