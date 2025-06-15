@@ -7,7 +7,7 @@ import { Section } from "./Section";
 const CERT_TITLE = "Python Programming Certification";
 const CERT_PROVIDER = "Zero to Mastery";
 const CERT_DATE = "Summer 2025";
-const CERT_PDF = "/certificates/python-cert.pdf";
+const CERT_PDF = "/certificates/python-cert-1.png";
 
 export function Education() {
   const [showCert, setShowCert] = useState(false);

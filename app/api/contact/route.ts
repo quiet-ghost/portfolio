@@ -10,8 +10,8 @@ export async function POST(req: Request) {
 
   try {
     await resend.emails.send({
-      from: "Your Portfolio <onboarding@resend.dev>", // or your verified sender
-      to: "quietghosttv@pm.me", // your email
+      from: "Your Portfolio <updates.quietghost.dev>",
+      to: "quietghosttv@pm.me",
       subject: `New Contact Form Message from ${name}`,
       replyTo: email,
       html: `
