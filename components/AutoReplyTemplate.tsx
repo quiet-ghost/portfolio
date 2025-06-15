@@ -52,7 +52,7 @@ export const AutoReplyTemplate: React.FC<AutoReplyTemplateProps> = ({
         <Text style={{ fontSize: "14px", marginTop: "20px" }}>
           Best regards,
           <br />
-          Kevin C. Sclafani (quietghost)
+          Kevin C. Sclafani (quietghost) <br />
         </Text>
       </Container>
     </Body>

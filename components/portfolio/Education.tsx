@@ -10,6 +10,7 @@ import {
   GraduationCap,
   X,
 } from "lucide-react";
+import Image from 'next/image';
 import { useState } from "react";
 import { Section } from "./Section";
 
@@ -202,7 +203,7 @@ export function Education() {
                 </div>
                 {/* Certificate Image */}
                 <div className="flex-1 w-full flex justify-center items-center bg-zinc-800/80 p-4">
-                  <img
+                  <Image
                     src={CERT_PNG}
                     alt={CERT_TITLE}
                     className="w-full max-h-[70vh] object-contain rounded-lg border border-cyan-400/20"
