@@ -7,7 +7,7 @@ import { Section } from "./Section";
 const CERT_TITLE = "Python Programming Certification";
 const CERT_PROVIDER = "Zero to Mastery";
 const CERT_DATE = "Summer 2025";
-const CERT_PDF = "/certificates/python-cert-1.png";
+const CERT_PNG = "/public/Certificates/python-cert-1.png";
 
 export function Education() {
   const [showCert, setShowCert] = useState(false);
@@ -148,7 +148,7 @@ export function Education() {
                 {/* Certificate PDF */}
                 <div className="flex-1 w-full flex justify-center items-center bg-zinc-900/80 p-4">
                   <iframe
-                    src={CERT_PDF}
+                    src={CERT_PNG}
                     title={CERT_TITLE}
                     className="w-full h-[70vh] rounded-lg border border-cyan-400/20 bg-zinc-800"
                   />
@@ -164,7 +164,7 @@ export function Education() {
                     Close
                   </Button>
                   <a
-                    href={CERT_PDF}
+                    href={CERT_PNG}
                     download
                     className="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-cyan-500/80 text-zinc-900 font-semibold shadow-lg shadow-cyan-500/20 hover:bg-cyan-400 transition-colors backdrop-blur"
                   >

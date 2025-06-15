@@ -10,7 +10,7 @@ export async function POST(req: Request) {
 
   try {
     await resend.emails.send({
-      from: "Your Portfolio <updates.quietghost.dev>",
+      from: `Your Portfolio <${email}>`,
       to: "quietghosttv@pm.me",
       subject: `New Contact Form Message from ${name}`,
       replyTo: email,
