@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
-import { Briefcase, FileDown } from "lucide-react";
-import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { AnimatePresence, motion } from "framer-motion";
+import { Briefcase, FileDown, X } from "lucide-react";
+import { useState } from "react";
 import { Section } from "./Section";
 
 const experiences = [
@@ -32,45 +33,6 @@ const experiences = [
     tech: ["Inventory Management", "Team Leadership", "Process Improvement"]
   },
   {
-    role: "Receiver - Tackle Warehouse",
-    company: "Sports Warehouse, LLC",
-    location: "Alpharetta, GA",
-    period: "Aug 2021 – Dec 2022",
-    description: [
-      "Accurately receive all ground/freight inbound product.",
-      "Schedule, document, and communicate deliveries and return authorizations.",
-      "Work independently and prioritize tasks with no supervisory oversight.",
-      "Operate in-house and office software (LibreOffice, Office365, Word, Excel)."
-    ],
-    tech: ["Receiving", "Documentation", "Office Software"]
-  },
-  {
-    role: "Lead Multimedia/Live Stream Coordinator",
-    company: "Journey Church Buford",
-    location: "Buford, GA",
-    period: "Jan 2006 – Dec 2022",
-    description: [
-      "Use Pro Presenter, OBS, and other software to distribute services live.",
-      "Coordinate with leadership using Google Drive for Sunday Service needs.",
-      "Troubleshoot technical and multimedia issues (Pro Presenter, OBS, ISP, etc.).",
-      "Maintain and organize all multimedia social sites (YouTube, Facebook)."
-    ],
-    tech: ["Pro Presenter", "OBS", "Google Drive", "YouTube", "Facebook"]
-  },
-  {
-    role: "Supply Chain Tech Lead - Supply Chain Management",
-    company: "Northside Forsyth Hospital",
-    location: "Cumming, GA",
-    period: "Jan 2016 – Aug 2021",
-    description: [
-      "Large scale inventory management and daily warehouse orders.",
-      "Planned and executed new procedures for efficiency.",
-      "Coordinated with vendors for returns and shipments.",
-      "Trained new employees on policies and procedures."
-    ],
-    tech: ["Inventory Management", "Vendor Coordination", "Training"]
-  },
-  {
     role: "Retail Sales Consultant",
     company: "Prime Communications, AT&T Retailer",
     location: "Kennesaw, GA",
@@ -86,21 +48,21 @@ const experiences = [
 ];
 
 export function Experience() {
+  const [showCV, setShowCV] = useState(false);
+
   return (
     <Section id="experience" className="max-w-3xl mx-auto">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-3xl font-bold text-cyan-400">Experience</h2>
-        <Link
-          href="/CV/Resume Final .pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          download
+        <Button
+          onClick={() => setShowCV(true)}
           className="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-cyan-500/80 text-zinc-900 font-semibold shadow-lg shadow-cyan-500/20 hover:bg-cyan-400 transition-colors backdrop-blur"
         >
           <FileDown className="w-5 h-5" />
-          Download CV
-        </Link>
+          View CV
+        </Button>
       </div>
+
       <div className="space-y-8">
         {experiences.map((exp, i) => (
           <motion.div
@@ -137,6 +99,64 @@ export function Experience() {
           </motion.div>
         ))}
       </div>
+
+      {/* CV Modal */}
+      <AnimatePresence>
+        {showCV && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
+            onClick={() => setShowCV(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="relative bg-zinc-900/95 border border-cyan-400/30 rounded-3xl shadow-2xl max-w-4xl w-full overflow-hidden flex flex-col items-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className="w-full px-6 pt-6 pb-2 bg-zinc-900/90 border-b border-cyan-700/30">
+                <h3 className="text-2xl font-bold text-cyan-400 mb-1">
+                  My CV
+                </h3>
+                <p className="text-zinc-400 text-base">
+                  Professional Experience & Education
+                </p>
+              </div>
+              {/* CV Preview */}
+              <div className="flex-1 w-full flex justify-center items-center bg-zinc-800/80 p-4 overflow-auto">
+                <iframe
+                  src="/cv.pdf"
+                  className="w-full h-[70vh] rounded-lg border border-cyan-400/20"
+                  title="CV Preview"
+                />
+              </div>
+              {/* Modal Footer */}
+              <div className="w-full px-6 py-4 bg-zinc-900/90 border-t border-cyan-700/30 flex justify-end gap-3">
+                <Button
+                  variant="destructive"
+                  className="flex items-center gap-2 px-5 py-2 rounded-lg font-semibold"
+                  onClick={() => setShowCV(false)}
+                >
+                  <X className="w-5 h-5" />
+                  Close
+                </Button>
+                <a
+                  href="/cv.pdf"
+                  download
+                  className="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-cyan-500/80 text-zinc-900 font-semibold shadow-lg shadow-cyan-500/20 hover:bg-cyan-400 transition-colors backdrop-blur"
+                >
+                  <FileDown className="w-5 h-5" />
+                  Download
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Section>
   );
 } 
