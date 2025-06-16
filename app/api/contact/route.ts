@@ -1,17 +1,17 @@
-export const runtime = "nodejs";
-
-import { NextResponse } from "next/server";
-import { Resend } from "resend";
-import { render } from "@react-email/render";
 import { AutoReplyTemplate } from "@/components/AutoReplyTemplate";
+import { render } from "@react-email/render";
+import { NextResponse } from "next/server";
+import type { ReactElement } from "react";
+import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+export const runtime = "nodejs";
 
 export async function POST(req: Request) {
   try {
     const { name, email, message } = await req.json();
 
-    // Send email to portfolio owner
     await resend.emails.send({
       from: "Portfolio Contact <contact@contact.quietghost.dev>",
       to: "quietghosttv@pm.me",
@@ -25,12 +25,13 @@ export async function POST(req: Request) {
       `,
     });
 
-    // Pre-render AutoReplyTemplate to HTML with type assertion
-    const emailHtml = (await render(
-      AutoReplyTemplate({ name, message }),
-    )) as string;
+    const emailHtml = await render(
+      AutoReplyTemplate({ name, message }) as ReactElement,
+      {
+        pretty: true,
+      }
+    );
 
-    // Send auto-reply to the employer
     await resend.emails.send({
       from: "Portfolio Contact <contact@contact.quietghost.dev>",
       to: email,
