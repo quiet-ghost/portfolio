@@ -28,9 +28,38 @@ const experiences = [
       "Develop and implement procedures with new systems.",
       "Assign tasks and provide direction to team members.",
       "Assist in employee reviews and provide feedback to management.",
+      "Point person for new process implementation along side owner with communication and about new software",
       "Continually learn and develop skills relevant to the position."
     ],
     tech: ["Inventory Management", "Team Leadership", "Process Improvement"]
+  },
+  {
+    role: "Lead Multimedia/ Live Stream Coordinator",
+    company: "Journey Church Buford",
+    location: "Buford, GA",
+    period: "January 2006 - December 2022",
+    description: [
+      "Use Pro Presenter, OBS and other software applications to distribute service live in person and across multiple live streaming services",
+      "Coordinate with other leadership in the church using Google drive to ensure all needs are met each week for Sunday Service",
+      "Troubleshoot any technical needs through the church including but not limited to, Pro Presenter, Google Drive, OBS, Internet (ISP related issues) any multimedia related issues",
+      "Maintain and organize all multimedia social sites (YouTube and Facebook)"
+    ],
+    tech: ["Live Streaming", "Pro Presenter", "OBS Studio", "Open Source Software", "Google Drive", "Technical Support", "Social Media Management", "Multimedia Production"]
+  },
+  {
+    role: "Supply Chain Tech Lead - Supply Chain Management",
+    company: "Northside Forsyth Hospital",
+    location: "Cumming, GA",
+    period: "January 2016 - August 2021",
+    description: [
+      "Large scale inventory management",
+      "Placed daily orders to fulfill warehouse stock",
+      "Planned and executed new procedures to establish the most efficient process to complete daily tasks",
+      "Communicated with vendors to coordinate returns or shipments of products",
+      "Picked tickets for materials of assigned departments",
+      "Coordinated efficient storage areas to optimize materials movements and minimize labor hours"
+    ],
+    tech: ["Supply Chain Management", "Inventory Management", "Vendor Relations", "Process Optimization", "Warehouse Operations"]
   },
   {
     role: "Retail Sales Consultant",
