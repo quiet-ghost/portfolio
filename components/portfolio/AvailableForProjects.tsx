@@ -7,14 +7,16 @@ import { useTheme } from "@/components/ThemeProvider";
 
 export function AvailableForProjects() {
   const { isDark } = useTheme();
-  
+
   return (
     <section className="py-20 px-6 relative overflow-hidden">
-      <div className={`max-w-4xl mx-auto backdrop-blur-xl rounded-3xl p-8 md:p-12 border shadow-2xl transition-all duration-300 ${
-        isDark 
-          ? 'bg-zinc-900/70 border-cyan-400/20 shadow-cyan-400/10' 
-          : 'bg-white/80 border-gray-200/50 shadow-gray-900/10'
-      }`}>
+      <div
+        className={`max-w-4xl mx-auto backdrop-blur-xl rounded-3xl p-8 md:p-12 border shadow-2xl transition-all duration-300 ${
+          isDark
+            ? "bg-zinc-900/70 border-cyan-400/20 shadow-cyan-400/10"
+            : "bg-white/80 border-gray-200/50 shadow-gray-900/10"
+        }`}
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -31,7 +33,9 @@ export function AvailableForProjects() {
             className="inline-flex items-center gap-2 bg-green-400/10 border border-green-400/20 rounded-full px-4 py-2 mb-8"
           >
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span className="text-green-400 font-medium text-sm">Available for Projects</span>
+            <span className="text-green-400 font-medium text-sm">
+              Available for Projects
+            </span>
           </motion.div>
 
           {/* Main heading */}
@@ -41,12 +45,12 @@ export function AvailableForProjects() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className={`text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r bg-clip-text text-transparent ${
-              isDark 
-                ? 'from-cyan-400 via-blue-400 to-purple-400' 
-                : 'from-cyan-600 via-blue-600 to-purple-600'
+              isDark
+                ? "from-cyan-400 via-blue-400 to-purple-400"
+                : "from-cyan-600 via-blue-600 to-purple-600"
             }`}
           >
-            Let's Build Something Amazing Together
+            Let&apos;s Build Something Amazing Together
           </motion.h2>
 
           {/* Description */}
@@ -57,8 +61,10 @@ export function AvailableForProjects() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-zinc-400 text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed"
           >
-            I'm currently accepting new projects and collaborations. Whether you need a full-stack web application, 
-            mobile app, or technical consultation, I'm here to help bring your ideas to life.
+            I&apos;m currently accepting new projects and collaborations.
+            Whether you need a full-stack web application, mobile app, or
+            technical consultation, I&apos;m here to help bring your ideas to
+            life.
           </motion.p>
 
           {/* Features grid */}
@@ -69,52 +75,97 @@ export function AvailableForProjects() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="grid md:grid-cols-3 gap-6 mb-12"
           >
-            <div className={`backdrop-blur-xl rounded-2xl border p-6 group transition-all duration-300 ${
-              isDark 
-                ? 'bg-zinc-800/50 border-cyan-400/20 hover:border-cyan-400/40' 
-                : 'bg-white/70 border-gray-200/50 hover:border-cyan-500/40'
-            }`}>
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-colors ${
-                isDark 
-                  ? 'bg-cyan-400/10 group-hover:bg-cyan-400/20' 
-                  : 'bg-cyan-100 group-hover:bg-cyan-200'
-              }`}>
-                <Clock className={`w-6 h-6 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`} />
+            <div
+              className={`backdrop-blur-xl rounded-2xl border p-6 group transition-all duration-300 ${
+                isDark
+                  ? "bg-zinc-800/50 border-cyan-400/20 hover:border-cyan-400/40"
+                  : "bg-white/70 border-gray-200/50 hover:border-cyan-500/40"
+              }`}
+            >
+              <div
+                className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-colors ${
+                  isDark
+                    ? "bg-cyan-400/10 group-hover:bg-cyan-400/20"
+                    : "bg-cyan-100 group-hover:bg-cyan-200"
+                }`}
+              >
+                <Clock
+                  className={`w-6 h-6 ${isDark ? "text-cyan-400" : "text-cyan-600"}`}
+                />
               </div>
-              <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}>Quick Response</h3>
-              <p className={`text-sm ${isDark ? 'text-zinc-400' : 'text-gray-700'}`}>Usually respond within 24 hours to discuss your project requirements.</p>
+              <h3
+                className={`text-xl font-semibold mb-2 ${isDark ? "text-cyan-400" : "text-cyan-600"}`}
+              >
+                Quick Response
+              </h3>
+              <p
+                className={`text-sm ${isDark ? "text-zinc-400" : "text-gray-700"}`}
+              >
+                Usually respond within 24 hours to discuss your project
+                requirements.
+              </p>
             </div>
 
-            <div className={`backdrop-blur-xl rounded-2xl border p-6 group transition-all duration-300 ${
-              isDark 
-                ? 'bg-zinc-800/50 border-cyan-400/20 hover:border-cyan-400/40' 
-                : 'bg-white/70 border-gray-200/50 hover:border-blue-500/40'
-            }`}>
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-colors ${
-                isDark 
-                  ? 'bg-blue-400/10 group-hover:bg-blue-400/20' 
-                  : 'bg-blue-100 group-hover:bg-blue-200'
-              }`}>
-                <Calendar className={`w-6 h-6 ${isDark ? 'text-blue-400' : 'text-blue-600'}`} />
+            <div
+              className={`backdrop-blur-xl rounded-2xl border p-6 group transition-all duration-300 ${
+                isDark
+                  ? "bg-zinc-800/50 border-cyan-400/20 hover:border-cyan-400/40"
+                  : "bg-white/70 border-gray-200/50 hover:border-blue-500/40"
+              }`}
+            >
+              <div
+                className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-colors ${
+                  isDark
+                    ? "bg-blue-400/10 group-hover:bg-blue-400/20"
+                    : "bg-blue-100 group-hover:bg-blue-200"
+                }`}
+              >
+                <Calendar
+                  className={`w-6 h-6 ${isDark ? "text-blue-400" : "text-blue-600"}`}
+                />
               </div>
-              <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>Flexible Schedule</h3>
-              <p className={`text-sm ${isDark ? 'text-zinc-400' : 'text-gray-700'}`}>Available for both short-term projects and long-term collaborations.</p>
+              <h3
+                className={`text-xl font-semibold mb-2 ${isDark ? "text-blue-400" : "text-blue-600"}`}
+              >
+                Flexible Schedule
+              </h3>
+              <p
+                className={`text-sm ${isDark ? "text-zinc-400" : "text-gray-700"}`}
+              >
+                Available for both short-term projects and long-term
+                collaborations.
+              </p>
             </div>
 
-            <div className={`backdrop-blur-xl rounded-2xl border p-6 group transition-all duration-300 ${
-              isDark 
-                ? 'bg-zinc-800/50 border-cyan-400/20 hover:border-cyan-400/40' 
-                : 'bg-white/70 border-gray-200/50 hover:border-purple-500/40'
-            }`}>
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-colors ${
-                isDark 
-                  ? 'bg-purple-400/10 group-hover:bg-purple-400/20' 
-                  : 'bg-purple-100 group-hover:bg-purple-200'
-              }`}>
-                <MessageCircle className={`w-6 h-6 ${isDark ? 'text-purple-400' : 'text-purple-600'}`} />
+            <div
+              className={`backdrop-blur-xl rounded-2xl border p-6 group transition-all duration-300 ${
+                isDark
+                  ? "bg-zinc-800/50 border-cyan-400/20 hover:border-cyan-400/40"
+                  : "bg-white/70 border-gray-200/50 hover:border-purple-500/40"
+              }`}
+            >
+              <div
+                className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-colors ${
+                  isDark
+                    ? "bg-purple-400/10 group-hover:bg-purple-400/20"
+                    : "bg-purple-100 group-hover:bg-purple-200"
+                }`}
+              >
+                <MessageCircle
+                  className={`w-6 h-6 ${isDark ? "text-purple-400" : "text-purple-600"}`}
+                />
               </div>
-              <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-purple-400' : 'text-purple-600'}`}>Clear Communication</h3>
-              <p className={`text-sm ${isDark ? 'text-zinc-400' : 'text-gray-700'}`}>Regular updates and transparent communication throughout the project.</p>
+              <h3
+                className={`text-xl font-semibold mb-2 ${isDark ? "text-purple-400" : "text-purple-600"}`}
+              >
+                Clear Communication
+              </h3>
+              <p
+                className={`text-sm ${isDark ? "text-zinc-400" : "text-gray-700"}`}
+              >
+                Regular updates and transparent communication throughout the
+                project.
+              </p>
             </div>
           </motion.div>
 
@@ -168,3 +219,4 @@ export function AvailableForProjects() {
     </section>
   );
 }
+
