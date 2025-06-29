@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTheme } from "@/components/ThemeProvider";
 import { Section } from "./Section";
 
 export function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<null | "success" | "error">(null);
   const [loading, setLoading] = useState(false);
-
+  const { isDark } = useTheme();
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
@@ -31,49 +32,88 @@ export function Contact() {
   }
 
   return (
-    <Section id="contact" className="max-w-xl mx-auto">
+    <Section id="contact" variant="card" className="max-w-2xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.5 }}
-        className="bg-zinc-900/80 rounded-2xl shadow-xl shadow-cyan-500/10 border border-cyan-700/30 p-8 backdrop-blur"
       >
-        <h2 className="text-3xl font-bold mb-4 text-cyan-400">Get in Touch</h2>
+        <h2
+          className={`text-4xl font-bold mb-8 text-center bg-gradient-to-r bg-clip-text text-transparent ${
+            isDark ? "from-cyan-400 to-blue-400" : "from-cyan-600 to-blue-600"
+          }`}
+        >
+          Get in Touch
+        </h2>{" "}
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="name" className="block text-zinc-300 mb-1 font-medium">Name</label>
+            <label
+              htmlFor="name"
+              className={`block mb-1 font-medium ${
+                isDark ? "text-zinc-300" : "text-zinc-700"
+              }`}
+            >
+              Name
+            </label>
             <input
               id="name"
               type="text"
               required
               value={form.name}
-              onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-              className="w-full px-4 py-2 rounded-lg bg-zinc-800/80 border border-cyan-700/30 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            />
-          </div>
+              onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+              className={`w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
+                isDark
+                  ? "bg-zinc-800/80 border-cyan-700/30 text-zinc-100"
+                  : "bg-white/80 border-zinc-300 text-zinc-900"
+              }`}
+            />          </div>
           <div>
-            <label htmlFor="email" className="block text-zinc-300 mb-1 font-medium">Email</label>
+            <label
+              htmlFor="email"
+              className={`block mb-1 font-medium ${
+                isDark ? "text-zinc-300" : "text-zinc-700"
+              }`}
+            >
+              Email
+            </label>
             <input
               id="email"
               type="email"
               required
               value={form.email}
-              onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-              className="w-full px-4 py-2 rounded-lg bg-zinc-800/80 border border-cyan-700/30 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            />
-          </div>
+              onChange={(e) =>
+                setForm((f) => ({ ...f, email: e.target.value }))
+              }
+              className={`w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
+                isDark
+                  ? "bg-zinc-800/80 border-cyan-700/30 text-zinc-100"
+                  : "bg-white/80 border-zinc-300 text-zinc-900"
+              }`}
+            />          </div>
           <div>
-            <label htmlFor="message" className="block text-zinc-300 mb-1 font-medium">Message</label>
+            <label
+              htmlFor="message"
+              className={`block mb-1 font-medium ${
+                isDark ? "text-zinc-300" : "text-zinc-700"
+              }`}
+            >
+              Message
+            </label>
             <textarea
               id="message"
               required
               rows={5}
               value={form.message}
-              onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
-              className="w-full px-4 py-2 rounded-lg bg-zinc-800/80 border border-cyan-700/30 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            />
-          </div>
+              onChange={(e) =>
+                setForm((f) => ({ ...f, message: e.target.value }))
+              }
+              className={`w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
+                isDark
+                  ? "bg-zinc-800/80 border-cyan-700/30 text-zinc-100"
+                  : "bg-white/80 border-zinc-300 text-zinc-900"
+              }`}
+            />          </div>
           <button
             type="submit"
             disabled={loading}
@@ -83,12 +123,17 @@ export function Contact() {
           </button>
         </form>
         {status === "success" && (
-          <p className="mt-4 text-green-400 font-medium text-center">Message sent! I will get back to you soon.</p>
+          <p className="mt-4 text-green-400 font-medium text-center">
+            Message sent! I will get back to you soon.
+          </p>
         )}
         {status === "error" && (
-          <p className="mt-4 text-red-400 font-medium text-center">Something went wrong. Please try again later.</p>
+          <p className="mt-4 text-red-400 font-medium text-center">
+            Something went wrong. Please try again later.
+          </p>
         )}
       </motion.div>
     </Section>
   );
-} 
+}
+
