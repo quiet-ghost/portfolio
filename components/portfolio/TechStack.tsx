@@ -1,35 +1,35 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import Image from "next/image";
+import { Icon } from "@iconify/react";
 import { useTheme } from "@/components/ThemeProvider";
 import { Section } from "./Section";
 
 const techList = [
-  { name: "Next.js", category: "Frontend", icon: "/TechStack/Next.js.svg" },
-  { name: "React", category: "Frontend", icon: "/TechStack/React.svg" },
+  { name: "Next.js", category: "Frontend", icon: "devicon:nextjs" },
+  { name: "React", category: "Frontend", icon: "devicon:react" },
   {
     name: "Tailwind CSS",
     category: "Frontend",
-    icon: "/TechStack/Tailwind CSS.svg",
+    icon: "devicon:tailwindcss",
   },
   {
     name: "TypeScript",
     category: "Frontend",
-    icon: "/TechStack/TypeScript.svg",
+    icon: "devicon:typescript",
   },
   {
     name: "JavaScript",
     category: "Frontend",
-    icon: "/TechStack/JavaScript.svg",
+    icon: "devicon:javascript",
   },
-  { name: "Java", category: "Backend", icon: "/TechStack/Java.svg" },
-  { name: "Python", category: "Backend", icon: "/TechStack/Python.svg" },
-  { name: "SQL", category: "Database", icon: "/TechStack/MySQL.svg" },
-  { name: "C++", category: "Backend", icon: "/TechStack/C++ (CPlusPlus).svg" },
+  { name: "Java", category: "Backend", icon: "devicon:java" },
+  { name: "Python", category: "Backend", icon: "devicon:python" },
+  { name: "SQL", category: "Database", icon: "devicon:mysql" },
+  { name: "C++", category: "Backend", icon: "devicon:cplusplus" },
   {
     name: "Supabase",
     category: "Database",
-    icon: "/TechStack/supabase-logo-icon.svg",
+    icon: "devicon:supabase",
   },
 ];
 
@@ -106,9 +106,8 @@ export function TechStack() {
                   : "bg-white/80 border-gray-200/50 shadow-gray-900/10 text-gray-900 hover:shadow-gray-900/20"
               }`}
             >
-              <Image
-                src={tech.icon}
-                alt={`${tech.name} icon`}
+              <Icon
+                icon={tech.icon}
                 width={32}
                 height={32}
                 className="w-8 h-8"
