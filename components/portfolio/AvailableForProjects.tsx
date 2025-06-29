@@ -34,7 +34,7 @@ export function AvailableForProjects() {
           >
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
             <span className="text-green-400 font-medium text-sm">
-              Available for Projects
+              Available for Internships
             </span>
           </motion.div>
 
@@ -61,9 +61,8 @@ export function AvailableForProjects() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-zinc-400 text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed"
           >
-            I&apos;m currently accepting new projects and collaborations.
-            Whether you need a full-stack web application, mobile app, or
-            technical consultation, I&apos;m here to help bring your ideas to
+            I&apos;m currently accepting new internships and collaborations.
+            I am looking for all oppertunities to grow my skills, I&apos;m here to help bring your ideas to
             life.
           </motion.p>
 
@@ -132,7 +131,7 @@ export function AvailableForProjects() {
               <p
                 className={`text-sm ${isDark ? "text-zinc-400" : "text-gray-700"}`}
               >
-                Available for both short-term projects and long-term
+                Available for both short-term internships and long-term
                 collaborations.
               </p>
             </div>
@@ -207,7 +206,7 @@ export function AvailableForProjects() {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="text-zinc-500 text-sm mt-8"
           >
-            Currently booking projects for Q3 2025 • Remote & On-site Available
+            Currently looking for internships for Q3 2025 • Remote & On-site Available
           </motion.p>
         </motion.div>
       </div>
