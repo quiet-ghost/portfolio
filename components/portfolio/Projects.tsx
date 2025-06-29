@@ -2,33 +2,56 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { ArrowDown, Github } from "lucide-react";
+import { useTheme } from "@/components/ThemeProvider";
 import { Section } from "./Section";
 
 export function Projects() {
+  const { isDark } = useTheme();
+  
   return (
-    <Section id="projects" className="max-w-4xl mx-auto">
-      <div className="">
-        <h2 className="text-3xl font-bold mb-8 text-cyan-400">Featured Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <Section id="projects" variant="card" className="max-w-5xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className={`text-4xl font-bold mb-8 text-center bg-gradient-to-r bg-clip-text text-transparent ${
+          isDark 
+            ? 'from-cyan-400 to-blue-400' 
+            : 'from-cyan-600 to-blue-600'
+        }`}>Featured Projects</h2>        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <motion.div
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <Card className="bg-zinc-800/80 backdrop-blur rounded-xl border border-cyan-400/20 shadow-cyan-400/10 shadow-lg p-6 h-full">
+            <Card className={`backdrop-blur rounded-xl border shadow-lg p-6 h-full transition-all duration-300 ${
+              isDark 
+                ? 'bg-zinc-800/80 border-cyan-400/20 shadow-cyan-400/10' 
+                : 'bg-white/80 border-gray-200/50 shadow-gray-900/10'
+            }`}>
               <div className="flex flex-col h-full">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-cyan-400">Highlight Helper</h3>
+                    <h3 className={`text-xl font-semibold ${
+                      isDark ? 'text-cyan-400' : 'text-cyan-600'
+                    }`}>Highlight Helper</h3>
                     <div className="flex flex-wrap gap-2 mt-2">
                       {['Next.js', 'React', 'Tailwind CSS', 'Supabase'].map((tech) => (
-                        <span key={tech} className="bg-zinc-700/80 border border-cyan-400/30 text-cyan-400 rounded-full px-3 py-1 text-xs font-medium">
+                        <span key={tech} className={`rounded-full px-3 py-1 text-xs font-medium border ${
+                          isDark 
+                            ? 'bg-zinc-700/80 border-cyan-400/30 text-cyan-400' 
+                            : 'bg-cyan-100 border-cyan-300 text-cyan-800'
+                        }`}>
                           {tech}
                         </span>
                       ))}
                     </div>
                   </div>
                 </div>
-                <p className="text-zinc-400 mb-4 flex-grow">
+                <p className={`mb-4 flex-grow ${
+                  isDark ? 'text-zinc-400' : 'text-gray-600'
+                }`}>
                   A productivity tool built for work to increase efficiency in day-to-day tasks. Built with Next.js, React, Tailwind CSS, and Supabase.
                 </p>
                 <div className="flex justify-center gap-4">
@@ -50,7 +73,7 @@ export function Projects() {
           </motion.div>
           {/* You can add more projects here as needed */}
         </div>
-      </div>
+      </motion.div>
     </Section>
   );
-} 
+}

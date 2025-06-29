@@ -1,5 +1,7 @@
 import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTheme } from "@/components/ThemeProvider";
 import { Section } from "./Section";
 
 const techList = [
@@ -25,36 +27,66 @@ const techCategories = [
 export function TechStack() {
   const [filter, setFilter] = useState("All");
   const filtered = filter === "All" ? techList : techList.filter(t => t.category === filter);
+  const { isDark } = useTheme();
 
   return (
-    <Section id="techstack" className="max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold mb-6 text-cyan-400">Tech Stack</h2>
-      <div className="flex flex-wrap gap-2 mb-6">
-        {techCategories.map(cat => {
-          const isSelected = filter === cat;
-          return (
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className={`px-4 py-1 rounded-full border border-cyan-500 font-medium transition-colors backdrop-blur
-                ${isSelected ? "bg-cyan-400 text-zinc-900 font-bold" : "bg-zinc-800/70 text-cyan-300 hover:bg-cyan-500 hover:text-zinc-900"}`}
+    <Section id="techstack" variant="card" className="max-w-5xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className={`text-4xl font-bold mb-8 text-center bg-gradient-to-r bg-clip-text text-transparent ${
+          isDark 
+            ? 'from-cyan-400 to-blue-400' 
+            : 'from-cyan-600 to-blue-600'
+        }`}>Tech Stack</h2>
+        
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          {techCategories.map(cat => {
+            const isSelected = filter === cat;
+            return (
+              <button
+                key={cat}
+                onClick={() => setFilter(cat)}
+                className={`px-6 py-2 rounded-full border font-medium transition-all duration-200 ${
+                  isSelected 
+                    ? isDark 
+                      ? "bg-cyan-400 text-zinc-900 border-cyan-400 font-bold" 
+                      : "bg-cyan-600 text-white border-cyan-600 font-bold"
+                    : isDark 
+                      ? "bg-zinc-800/70 text-cyan-300 border-cyan-500 hover:bg-cyan-500 hover:text-zinc-900" 
+                      : "bg-white/70 text-cyan-700 border-cyan-300 hover:bg-cyan-600 hover:text-white"
+                }`}
+              >
+                {cat}
+              </button>
+            );
+          })}
+        </div>
+        
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          {filtered.map((tech, index) => (
+            <motion.div
+              key={tech.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.05, y: -2 }}
+              className={`flex items-center gap-3 rounded-xl border shadow-lg p-4 font-medium text-lg backdrop-blur transition-all duration-200 ${
+                isDark 
+                  ? 'bg-zinc-800/80 border-cyan-700/30 shadow-cyan-500/10 text-zinc-100 hover:shadow-cyan-400/30' 
+                  : 'bg-white/80 border-gray-200/50 shadow-gray-900/10 text-gray-900 hover:shadow-gray-900/20'
+              }`}
             >
-              {cat}
-            </button>
-          );
-        })}
-      </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-        {filtered.map(tech => (
-          <div
-            key={tech.name}
-            className="flex items-center gap-3 rounded-xl bg-zinc-900/80 border border-cyan-700/30 shadow-lg shadow-cyan-500/10 p-4 text-zinc-100 font-medium text-lg backdrop-blur hover:scale-105 hover:shadow-cyan-400/30 transition-transform duration-200"
-          >
-            <Icon icon={tech.icon} width={32} height={32} className="w-8 h-8" />
-            <span>{tech.name}</span>
-          </div>
-        ))}
-      </div>
+              <Icon icon={tech.icon} width={32} height={32} className="w-8 h-8" />
+              <span>{tech.name}</span>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
     </Section>
   );
-} 
+}
