@@ -1,20 +1,36 @@
-import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
 import { useTheme } from "@/components/ThemeProvider";
 import { Section } from "./Section";
 
 const techList = [
-  { name: "Next.js", category: "Frontend", icon: "devicon:nextjs" },
-  { name: "React", category: "Frontend", icon: "devicon:react" },
-  { name: "Tailwind CSS", category: "Frontend", icon: "devicon:tailwindcss" },
-  { name: "TypeScript", category: "Frontend", icon: "devicon:typescript" },
-  { name: "JavaScript", category: "Frontend", icon: "devicon:javascript" },
-  { name: "Java", category: "Backend", icon: "devicon:java" },
-  { name: "Python", category: "Backend", icon: "devicon:python" },
-  { name: "SQL", category: "Database", icon: "devicon:mysql" },
-  { name: "C++", category: "Backend", icon: "devicon:cplusplus" },
-  { name: "Supabase", category: "Database", icon: "devicon:supabase" },
+  { name: "Next.js", category: "Frontend", icon: "/TechStack/Next.js.svg" },
+  { name: "React", category: "Frontend", icon: "/TechStack/React.svg" },
+  {
+    name: "Tailwind CSS",
+    category: "Frontend",
+    icon: "/TechStack/Tailwind CSS.svg",
+  },
+  {
+    name: "TypeScript",
+    category: "Frontend",
+    icon: "/TechStack/TypeScript.svg",
+  },
+  {
+    name: "JavaScript",
+    category: "Frontend",
+    icon: "/TechStack/JavaScript.svg",
+  },
+  { name: "Java", category: "Backend", icon: "/TechStack/Java.svg" },
+  { name: "Python", category: "Backend", icon: "/TechStack/Python.svg" },
+  { name: "SQL", category: "Database", icon: "/TechStack/MySQL.svg" },
+  { name: "C++", category: "Backend", icon: "/TechStack/C++ (CPlusPlus).svg" },
+  {
+    name: "Supabase",
+    category: "Database",
+    icon: "/TechStack/supabase-logo-icon.svg",
+  },
 ];
 
 const techCategories = ["All", "Frontend", "Backend", "Database"];
@@ -28,10 +44,16 @@ export function TechStack() {
   return (
     <Section id="techstack" variant="card" className="max-w-5xl mx-auto">
       <motion.div
-        initial={{ opacity: 1, y: 20 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{
+          duration: 0.8,
+          ease: [0.25, 0.46, 0.45, 0.94],
+          opacity: { duration: 0.6 },
+          y: { duration: 0.8 },
+        }}
+        style={{ willChange: "transform, opacity" }}
       >
         <h2
           className={`text-4xl font-bold mb-8 text-center bg-gradient-to-r bg-clip-text text-transparent ${
@@ -67,20 +89,26 @@ export function TechStack() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           {filtered.map((tech, index) => (
             <motion.div
-              key={tech.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              key={`${filter}-${tech.name}`}
+              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.05,
+                ease: [0.25, 0.46, 0.45, 0.94],
+              }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05, y: -2 }}
-              className={`flex items-center gap-3 rounded-xl border shadow-lg p-4 font-medium text-lg backdrop-blur transition-all duration-200 ${
+              style={{ willChange: "transform, opacity" }}
+              className={`flex items-center gap-3 rounded-xl border shadow-lg p-4 font-medium text-lg backdrop-blur ${
                 isDark
                   ? "bg-zinc-800/80 border-cyan-700/30 shadow-cyan-500/10 text-zinc-100 hover:shadow-cyan-400/30"
                   : "bg-white/80 border-gray-200/50 shadow-gray-900/10 text-gray-900 hover:shadow-gray-900/20"
               }`}
             >
-              <Icon
-                icon={tech.icon}
+              <Image
+                src={tech.icon}
+                alt={`${tech.name} icon`}
                 width={32}
                 height={32}
                 className="w-8 h-8"
@@ -93,4 +121,3 @@ export function TechStack() {
     </Section>
   );
 }
-

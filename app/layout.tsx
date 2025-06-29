@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { PerformanceMonitor } from "@/components/PerformanceMonitor";
 import Navbar from "@/components/ui/navbar";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -6,6 +7,13 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Kevin Sclafani Portfolio",
   description: "Portfolio for QuietGhost",
+  viewport: "width=device-width, initial-scale=1",
+  robots: "index, follow",
+  openGraph: {
+    title: "Kevin Sclafani Portfolio",
+    description: "Portfolio for QuietGhost",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -20,6 +28,7 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
+          <PerformanceMonitor />
           <Navbar />
           {children}
         </ThemeProvider>

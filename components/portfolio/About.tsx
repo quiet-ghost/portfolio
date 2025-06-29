@@ -8,10 +8,16 @@ export function About() {
   return (
     <Section id="about" variant="card" className="max-w-4xl mx-auto">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ 
+          duration: 0.8,
+          ease: [0.25, 0.46, 0.45, 0.94],
+          opacity: { duration: 0.6 },
+          y: { duration: 0.8 }
+        }}
+        style={{ willChange: 'transform, opacity' }}
       >
         <h2 className={`text-4xl font-bold mb-8 bg-gradient-to-r bg-clip-text text-transparent ${
           isDark 

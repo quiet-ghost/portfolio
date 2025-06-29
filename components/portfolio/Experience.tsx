@@ -121,15 +121,38 @@ export function Experience() {
         </Button>
       </div>
 
-      <div className="space-y-8">
-        {experiences.map((exp, i) => (
+      <motion.div 
+        className="space-y-8"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.15,
+              delayChildren: 0.1,
+            },
+          },
+        }}
+      >
+        {experiences.map((exp ) => (
           <motion.div
             key={exp.role + exp.company}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className={`relative rounded-2xl border shadow-lg p-6 backdrop-blur transition-all duration-300 ${
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.6,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                },
+              },
+            }}
+            style={{ willChange: 'transform, opacity' }}
+            className={`relative rounded-2xl border shadow-lg p-6 backdrop-blur ${
               isDark
                 ? "bg-zinc-800/80 border-cyan-700/30 shadow-cyan-500/10"
                 : "bg-white/80 border-gray-200/50 shadow-gray-900/10"
@@ -181,13 +204,12 @@ export function Experience() {
                   }`}
                 >
                   {tech}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
+                 </span>
+               ))}
+             </div>
+           </motion.div>
+         ))}
+       </motion.div>
       {/* CV Modal */}
       <AnimatePresence>
         {showCV && (

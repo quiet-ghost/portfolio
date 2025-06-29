@@ -181,9 +181,9 @@ export function Education() {
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-400/50 via-blue-400/30 to-purple-400/50 z-0" />
 
           {/* ZTM branch lines */}
-          <div className="absolute left-8 top-[240px] w-20 h-0.5 bg-gradient-to-r from-cyan-400/50 to-yellow-400/50 z-0" />
-          <div className="absolute left-[7rem] top-[240px] h-[160px] w-0.5 bg-gradient-to-b from-yellow-400/50 to-purple-400/50 z-0" />
-          <div className="absolute left-8 top-[400px] w-20 h-0.5 bg-gradient-to-r from-purple-400/50 to-cyan-400/50 z-0" />
+          {/* <div className="absolute left-8 top-[240px] w-20 h-0.5 bg-gradient-to-r from-cyan-400/50 to-yellow-400/50 z-0" /> */}
+          {/* <div className="absolute left-[7rem] top-[240px] h-[160px] w-0.5 bg-gradient-to-b from-yellow-400/50 to-purple-400/50 z-0" /> */}
+          {/* <div className="absolute left-8 top-[400px] w-20 h-0.5 bg-gradient-to-r from-purple-400/50 to-cyan-400/50 z-0" /> */}
 
           {/* Timeline items */}
           <div className="space-y-12">
@@ -403,4 +403,3 @@ export function Education() {
     </Section>
   );
 }
-

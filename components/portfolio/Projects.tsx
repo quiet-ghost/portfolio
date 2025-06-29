@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { ArrowDown, Github } from "lucide-react";
+import { ArrowDown, GitBranch } from "lucide-react";
 import { useTheme } from "@/components/ThemeProvider";
 import { Section } from "./Section";
 
@@ -11,10 +11,16 @@ export function Projects() {
   return (
     <Section id="projects" variant="card" className="max-w-5xl mx-auto">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ 
+          duration: 0.8,
+          ease: [0.25, 0.46, 0.45, 0.94],
+          opacity: { duration: 0.6 },
+          y: { duration: 0.8 }
+        }}
+        style={{ willChange: 'transform, opacity' }}
       >
         <h2 className={`text-4xl font-bold mb-8 text-center bg-gradient-to-r bg-clip-text text-transparent ${
           isDark 
@@ -22,10 +28,19 @@ export function Projects() {
             : 'from-cyan-600 to-blue-600'
         }`}>Featured Projects</h2>        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ 
+              duration: 0.7,
+              ease: [0.25, 0.46, 0.45, 0.94],
+              opacity: { duration: 0.5 },
+              y: { duration: 0.7 },
+              scale: { duration: 0.7 }
+            }}
             whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <Card className={`backdrop-blur rounded-xl border shadow-lg p-6 h-full transition-all duration-300 ${
+            style={{ willChange: 'transform, opacity' }}
+          >            <Card className={`backdrop-blur rounded-xl border shadow-lg p-6 h-full transition-all duration-300 ${
               isDark 
                 ? 'bg-zinc-800/80 border-cyan-400/20 shadow-cyan-400/10' 
                 : 'bg-white/80 border-gray-200/50 shadow-gray-900/10'
@@ -57,7 +72,7 @@ export function Projects() {
                 <div className="flex justify-center gap-4">
                   <Button variant="ghost" size="sm" className="text-zinc-400 hover:text-cyan-400 hover:bg-zinc-900/60" asChild>
                     <a href="https://github.com/quiet-ghost/highlight-helper" target="_blank" rel="noopener noreferrer">
-                      <Github className="h-4 w-4 mr-2" />
+                      <GitBranch className="h-4 w-4 mr-2" />
                       View Code
                     </a>
                   </Button>

@@ -29,9 +29,15 @@ export default function Hero() {
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ 
+              duration: 0.8,
+              ease: [0.25, 0.46, 0.45, 0.94],
+              opacity: { duration: 0.6 },
+              y: { duration: 0.8 }
+            }}
+            style={{ willChange: 'transform, opacity' }}
             className={`text-center backdrop-blur-xl rounded-3xl p-12 border shadow-2xl ${
               isDark
                 ? "bg-zinc-900/70 border-cyan-400/20 shadow-cyan-400/10"
@@ -42,7 +48,14 @@ export default function Hero() {
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
+              transition={{ 
+                delay: 0.2, 
+                duration: 0.7,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                opacity: { duration: 0.5 },
+                scale: { duration: 0.7 }
+              }}
+              style={{ willChange: 'transform, opacity' }}
               className="relative w-36 h-36 mx-auto mb-8"
             >
               <div
@@ -65,7 +78,14 @@ export default function Hero() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
+              transition={{ 
+                delay: 0.3, 
+                duration: 0.6,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                opacity: { duration: 0.5 },
+                y: { duration: 0.6 }
+              }}
+              style={{ willChange: 'transform, opacity' }}
               className={`text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r bg-clip-text text-transparent ${
                 isDark
                   ? "from-cyan-400 via-blue-400 to-purple-400"
@@ -77,7 +97,14 @@ export default function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
+              transition={{ 
+                delay: 0.4, 
+                duration: 0.6,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                opacity: { duration: 0.5 },
+                y: { duration: 0.6 }
+              }}
+              style={{ willChange: 'transform, opacity' }}
               className={`text-xl md:text-2xl mb-8 font-mono min-h-[2.5rem] ${
                 isDark ? "text-cyan-400" : "text-cyan-600"
               }`}
