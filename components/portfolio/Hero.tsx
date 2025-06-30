@@ -4,10 +4,12 @@ import { Mail } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useTheme } from "@/components/ThemeProvider";
+import { Icon } from "@iconify/react";
 
 export default function Hero() {
   const fullText = "Software Developer Student";
   const [typed, setTyped] = useState("");
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
   const { isDark } = useTheme();
 
   useEffect(() => {
@@ -18,6 +20,16 @@ export default function Hero() {
       if (i === fullText.length) clearInterval(interval);
     }, 60);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 100;
+      setShowScrollIndicator(!scrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -195,6 +207,53 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
+
+      {/* Scroll for more indicator - positioned at bottom of viewport */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ 
+          opacity: showScrollIndicator ? 1 : 0, 
+          y: showScrollIndicator ? 0 : 20 
+        }}
+        transition={{ duration: 0.6 }}
+        className="hidden md:flex fixed bottom-8 left-0 right-0 justify-center z-20 pointer-events-none"
+      >
+        <motion.button
+          onClick={() => {
+            const overviewSection = document.getElementById("about");
+            if (overviewSection) {
+              overviewSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          }}
+          className="flex flex-col items-center gap-2 text-gray-500 dark:text-gray-400 cursor-pointer hover:text-gray-700 dark:hover:text-gray-200 transition-colors duration-300 pointer-events-auto"
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <span className="text-sm font-medium tracking-wide">
+            Scroll for more
+          </span>
+          <motion.div
+            animate={{ y: [0, 4, 0] }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <Icon
+              icon="mdi:chevron-down"
+              width={24}
+              height={24}
+              className="text-gray-400 dark:text-gray-500"
+            />
+          </motion.div>
+        </motion.button>
+      </motion.div>
     </section>
   );
 }
