@@ -15,7 +15,7 @@ export async function POST(req: Request) {
     // Send email to portfolio owner
     await resend.emails.send({
       from: "Portfolio Contact <contact@contact.quietghost.dev>",
-      to: "quietghosttv@pm.me",
+      to: "ksclafani@quietghost.dev",
       subject: `New Contact Form Message from ${name}`,
       replyTo: email,
       html: `
@@ -34,7 +34,7 @@ export async function POST(req: Request) {
           AutoReplyTemplate({ name, message }) as ReactElement,
           {
             pretty: true,
-          }
+          },
         );
       } catch (renderError) {
         console.error("Error rendering template:", renderError);
@@ -55,7 +55,7 @@ export async function POST(req: Request) {
       // Send auto-reply to the employer with retry
       let retryCount = 0;
       const maxRetries = 3;
-      
+
       while (retryCount < maxRetries) {
         try {
           await resend.emails.send({
@@ -71,15 +71,17 @@ export async function POST(req: Request) {
             throw sendError; // Re-throw if all retries failed
           }
           // Wait before retrying (exponential backoff)
-          await new Promise(resolve => setTimeout(resolve, Math.pow(2, retryCount) * 1000));
+          await new Promise((resolve) =>
+            setTimeout(resolve, Math.pow(2, retryCount) * 1000),
+          );
         }
       }
     } catch (autoReplyError) {
       console.error("Error sending auto-reply:", autoReplyError);
       // Continue with the response even if auto-reply fails
-      return NextResponse.json({ 
-        success: true, 
-        warning: "Message received but auto-reply failed to send" 
+      return NextResponse.json({
+        success: true,
+        warning: "Message received but auto-reply failed to send",
       });
     }
 
@@ -87,12 +89,12 @@ export async function POST(req: Request) {
   } catch (error) {
     console.error("Error in contact form submission:", error);
     return NextResponse.json(
-      { 
-        success: false, 
+      {
+        success: false,
         error: (error as Error).message,
-        details: error instanceof Error ? error.stack : undefined
+        details: error instanceof Error ? error.stack : undefined,
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
