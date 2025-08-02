@@ -28,8 +28,8 @@ export default function Hero() {
       setShowScrollIndicator(!scrolled);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -192,7 +192,7 @@ export default function Hero() {
                 </svg>
               </motion.a>
               <motion.a
-                href="mailto:quietghosttv@pm.me"
+                href="mailto:ksclafani@quietghost.dev"
                 whileHover={{ scale: 1.2, y: -2 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className={`p-3 rounded-xl transition-all duration-300 ${
@@ -211,9 +211,9 @@ export default function Hero() {
       {/* Scroll for more indicator - positioned at bottom of viewport */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        animate={{ 
-          opacity: showScrollIndicator ? 1 : 0, 
-          y: showScrollIndicator ? 0 : 20 
+        animate={{
+          opacity: showScrollIndicator ? 1 : 0,
+          y: showScrollIndicator ? 0 : 20,
         }}
         transition={{ duration: 0.6 }}
         className="hidden md:flex fixed bottom-8 left-0 right-0 justify-center z-20 pointer-events-none"
