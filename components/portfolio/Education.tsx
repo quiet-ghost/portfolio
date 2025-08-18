@@ -183,7 +183,7 @@ function CourseCard({
   isDark: boolean;
   onClick: () => void;
 }) {
-  const getStatusColor = (status: string) => {
+  const getStatusColor = (status: Course["status"]) => {
     switch (status) {
       case "completed":
         return isDark ? "#22c55e" : "#16a34a"; // green
