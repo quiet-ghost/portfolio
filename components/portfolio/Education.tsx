@@ -40,7 +40,7 @@ const CERT_DATE = "Summer 2025";
 const CERT_PNG = "/Certificates/python-cert-1.png";
 
 // Course data
-const courses = [
+const courses: Course[] = [
   {
     id: "webdev1",
     title: "Web Development 1",
