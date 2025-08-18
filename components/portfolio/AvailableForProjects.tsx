@@ -44,13 +44,13 @@ export function AvailableForProjects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className={`text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r bg-clip-text text-transparent ${
+            className={`text-4xl md:text-5xl font-bold mb-8 pb-2 bg-gradient-to-r bg-clip-text text-transparent leading-tight ${
               isDark
                 ? "from-cyan-400 via-blue-400 to-purple-400"
                 : "from-cyan-600 via-blue-600 to-purple-600"
             }`}
           >
-            Let&apos;s Build Something Amazing Together
+            Let&apos;s Build Something Together
           </motion.h2>
 
           {/* Description */}
@@ -59,11 +59,11 @@ export function AvailableForProjects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-zinc-400 text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed"
+            className="text-zinc-400 text-lg md:text-xl max-w-3xl mx-auto  mb-12 leading-relaxed"
           >
-            I&apos;m currently accepting new internships and collaborations.
-            I am looking for all oppertunities to grow my skills, I&apos;m here to help bring your ideas to
-            life.
+            I&apos;m currently accepting new internships and collaborations. I
+            am looking for all oppertunities to grow my skills, I&apos;m here to
+            help bring your ideas to life.
           </motion.p>
 
           {/* Features grid */}
@@ -98,10 +98,11 @@ export function AvailableForProjects() {
                 Quick Response
               </h3>
               <p
-                className={`text-sm ${isDark ? "text-zinc-400" : "text-gray-700"}`}
+                className={`text-sm leading-relaxed ${isDark ? "text-zinc-400" : "text-gray-700"}`}
               >
-                Usually respond within 24 hours to discuss your project
-                requirements.
+                Will respond in a timely manner to all inquiries. I&apos;m here
+                to learn and grow my skill set. So don&apos;t hesitate to reach
+                out if you have any questions or guidance.
               </p>
             </div>
 
@@ -129,10 +130,11 @@ export function AvailableForProjects() {
                 Flexible Schedule
               </h3>
               <p
-                className={`text-sm ${isDark ? "text-zinc-400" : "text-gray-700"}`}
+                className={`text-sm leading-relaxed ${isDark ? "text-zinc-400" : "text-gray-700"}`}
               >
                 Available for both short-term internships and long-term
-                collaborations.
+                collaborations. Looking for any and all opportunities to grow
+                within the field.
               </p>
             </div>
 
@@ -160,10 +162,11 @@ export function AvailableForProjects() {
                 Clear Communication
               </h3>
               <p
-                className={`text-sm ${isDark ? "text-zinc-400" : "text-gray-700"}`}
+                className={`text-sm leading-relaxed ${isDark ? "text-zinc-400" : "text-gray-700"}`}
               >
-                Regular updates and transparent communication throughout the
-                project.
+                I will be fully transparent and responsive throughout the
+                project. Regular updates and clear communication, as I am still
+                learning and growing.
               </p>
             </div>
           </motion.div>
@@ -206,7 +209,8 @@ export function AvailableForProjects() {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="text-zinc-500 text-sm mt-8"
           >
-            Currently looking for internships for Q3 2025 • Remote & On-site Available
+            Currently looking for internships • Remote & On-site Available
+            (location and time dependent as I do work full-time)
           </motion.p>
         </motion.div>
       </div>
@@ -218,4 +222,3 @@ export function AvailableForProjects() {
     </section>
   );
 }
-
