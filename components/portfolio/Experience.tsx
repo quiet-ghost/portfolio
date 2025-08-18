@@ -31,6 +31,7 @@ const experiences = [
     period: "Jan 2022 – Current",
     description: [
       "Ensure all customer orders are valid and charged correctly.",
+      "Devise effective and efficient methods to implement into day to day proceedures.",
       "Communicate with other departments regarding inventory or order issues.",
       "Execute daily fulfillment operations and prioritize customer orders.",
       "Develop and implement procedures with new systems.",
@@ -38,8 +39,14 @@ const experiences = [
       "Assist in employee reviews and provide feedback to management.",
       "Point person for new process implementation along side owner with communication and about new software",
       "Continually learn and develop skills relevant to the position.",
+      "Developed in house tool to allow more effective workflow for employees and operators.",
     ],
-    tech: ["Inventory Management", "Team Leadership", "Process Improvement"],
+    tech: [
+      "Inventory Management",
+      "Team Leadership",
+      "Process Improvement",
+      "HMC (paylocity)",
+    ],
   },
   {
     role: "Lead Multimedia/ Live Stream Coordinator",
@@ -121,7 +128,7 @@ export function Experience() {
         </Button>
       </div>
 
-      <motion.div 
+      <motion.div
         className="space-y-8"
         initial="hidden"
         whileInView="visible"
@@ -137,7 +144,7 @@ export function Experience() {
           },
         }}
       >
-        {experiences.map((exp ) => (
+        {experiences.map((exp) => (
           <motion.div
             key={exp.role + exp.company}
             variants={{
@@ -151,7 +158,7 @@ export function Experience() {
                 },
               },
             }}
-            style={{ willChange: 'transform, opacity' }}
+            style={{ willChange: "transform, opacity" }}
             className={`relative rounded-2xl border shadow-lg p-6 backdrop-blur ${
               isDark
                 ? "bg-zinc-800/80 border-cyan-700/30 shadow-cyan-500/10"
@@ -204,12 +211,12 @@ export function Experience() {
                   }`}
                 >
                   {tech}
-                 </span>
-               ))}
-             </div>
-           </motion.div>
-         ))}
-       </motion.div>
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
       {/* CV Modal */}
       <AnimatePresence>
         {showCV && (

@@ -18,6 +18,22 @@ import { useTheme } from "@/components/ThemeProvider";
 import { Section } from "./Section";
 import { Icon } from "@iconify/react";
 
+// Course interface
+interface Course {
+  id: string;
+  title: string;
+  institution: string;
+  date: string;
+  icon: string;
+  status: "completed" | "in progress" | "upcoming";
+  type: "course" | "certification";
+  skills: string[];
+  description: string;
+  link?: string;
+  hasCertificate?: boolean;
+  hours?: number;
+}
+
 const CERT_TITLE = "Python Programming Certification";
 const CERT_PROVIDER = "Zero to Mastery";
 const CERT_DATE = "Summer 2025";
@@ -120,7 +136,7 @@ const courses = [
     institution: "Gwinnett Technical College",
     date: "Fall 2025",
     icon: "devicon:java",
-    status: "upcoming",
+    status: "in progress",
     type: "course",
     skills: [
       "JDBC",
@@ -132,6 +148,29 @@ const courses = [
     description:
       "Advanced Java concepts including database connectivity, concurrent programming, and distributed systems.",
   },
+  {
+    id: "amazonJrDev",
+    title: "Amazon Junior Developer Course",
+    institution: "Coursera",
+    date: "Summer/Fall 2025",
+    icon: "devicon:java",
+    status: "in progress",
+    type: "certification",
+    skills: [
+      "Java",
+      "Systems Development",
+      "Full-Stack Development",
+      "SQL",
+      "Generative AI",
+      "JUnit",
+      "SDLC",
+      "Object-oriented Programming",
+      "Test Driven Development",
+    ],
+    description:
+      "Java programming, object-oriented design, data structures, algorithms, SQL, and full-stack web development with Spring Boot through hands-on projects.",
+    link: "https://www.coursera.org/professional-certificates/amazon-junior-software-developer",
+  },
 ];
 
 // Course Card Component
@@ -140,7 +179,7 @@ function CourseCard({
   isDark,
   onClick,
 }: {
-  course: any;
+  course: Course;
   isDark: boolean;
   onClick: () => void;
 }) {
