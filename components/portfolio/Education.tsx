@@ -32,12 +32,13 @@ interface Course {
   link?: string;
   hasCertificate?: boolean;
   hours?: number;
+  certificate?: {
+    title: string;
+    provider: string;
+    date: string;
+    imagePath: string;
+  };
 }
-
-const CERT_TITLE = "Python Programming Certification";
-const CERT_PROVIDER = "Zero to Mastery";
-const CERT_DATE = "Summer 2025";
-const CERT_PNG = "/Certificates/python-cert-1.png";
 
 // Course data
 const courses: Course[] = [
@@ -111,6 +112,12 @@ const courses: Course[] = [
     link: "https://zerotomastery.io/courses/learn-python/",
     hasCertificate: true,
     hours: 30,
+    certificate: {
+      title: "Python Programming Certification",
+      provider: "Zero to Mastery",
+      date: "Summer 2025",
+      imagePath: "/Certificates/python-cert-1.png",
+    },
   },
   {
     id: "java1",
@@ -171,6 +178,33 @@ const courses: Course[] = [
       "Java programming, object-oriented design, data structures, algorithms, SQL, and full-stack web development with Spring Boot through hands-on projects.",
     link: "https://www.coursera.org/professional-certificates/amazon-junior-software-developer",
   },
+  {
+    id: "amazonJrDev",
+    title: "Amazon Introduction to Software Development",
+    institution: "Coursera",
+    date: "Summer 2025",
+    icon: "devicon:java",
+    status: "completed",
+    type: "certification",
+    skills: [
+      "Java",
+      "Program Development",
+      "Programming Principles",
+      "SDLC",
+      "Object-oriented Programming",
+      "Test Driven Development",
+    ],
+    description:
+      "Java programming, object-oriented design, data structures, algorithms.",
+    link: "https://www.coursera.org/account/accomplishments/verify/6RTCH4DQZY6B",
+    hasCertificate: true,
+    certificate: {
+      title: "Amazon Introduction to Software Development",
+      provider: "Coursera",
+      date: "Summer 2025",
+      imagePath: "/Certificates/Coursera 6RTCH4DQZY6B-SoftwareDevelopment.pdf",
+    },
+  },
 ];
 
 // Course Card Component
@@ -178,10 +212,12 @@ function CourseCard({
   course,
   isDark,
   onClick,
+  onViewCertificate,
 }: {
   course: Course;
   isDark: boolean;
   onClick: () => void;
+  onViewCertificate: (certificate: Course["certificate"]) => void;
 }) {
   const getStatusColor = (status: Course["status"]) => {
     switch (status) {
@@ -355,7 +391,7 @@ function CourseCard({
                   className="h-8 px-3 text-xs"
                   onClick={(e) => {
                     e.stopPropagation();
-                    // Handle certificate viewing
+                    onViewCertificate(course.certificate);
                   }}
                 >
                   <GraduationCap className="h-3 w-3 mr-1" />
@@ -374,6 +410,9 @@ export function Education() {
   const [showCert, setShowCert] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
   const [showDetails, setShowDetails] = useState(false);
+  const [currentCertificate, setCurrentCertificate] = useState<
+    Course["certificate"] | null
+  >(null);
   const { isDark } = useTheme();
 
   const completedCourses = courses.filter(
@@ -429,7 +468,7 @@ export function Education() {
               <div
                 className={`text-2xl font-bold ${isDark ? "text-cyan-400" : "text-cyan-600"}`}
               >
-                1
+                2
               </div>
               <div
                 className={`text-sm ${isDark ? "text-zinc-400" : "text-gray-600"}`}
@@ -464,6 +503,10 @@ export function Education() {
                 onClick={() => {
                   setSelectedCourse(course.id);
                   setShowDetails(true);
+                }}
+                onViewCertificate={(certificate) => {
+                  setCurrentCertificate(certificate || null);
+                  setShowCert(true);
                 }}
               />
             </motion.div>
@@ -640,6 +683,9 @@ export function Education() {
                                   size="sm"
                                   onClick={() => {
                                     setShowDetails(false);
+                                    setCurrentCertificate(
+                                      course.certificate || null,
+                                    );
                                     setShowCert(true);
                                   }}
                                 >
@@ -673,47 +719,74 @@ export function Education() {
                 initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.95, opacity: 0 }}
-                className="relative bg-zinc-900/95 border border-cyan-400/30 rounded-3xl shadow-2xl max-w-3xl w-full overflow-hidden flex flex-col items-center"
+                className="relative bg-zinc-900/95 border border-cyan-400/30 rounded-2xl shadow-2xl max-w-4xl w-full overflow-hidden flex flex-col"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="w-full px-6 pt-6 pb-2 bg-zinc-900/90 border-b border-cyan-700/30">
-                  <h3 className="text-2xl font-bold text-cyan-400 mb-1">
-                    {CERT_TITLE}
-                  </h3>
-                  <p className="text-zinc-400 text-base">
-                    {CERT_PROVIDER} • {CERT_DATE}
-                  </p>
-                </div>
-                <div className="flex-1 w-full flex justify-center items-center bg-zinc-800/80 p-4">
-                  <Image
-                    src={CERT_PNG}
-                    alt={CERT_TITLE}
-                    width={800}
-                    height={600}
-                    className="w-full max-h-[70vh] object-contain rounded-lg border border-cyan-400/20"
-                    onError={() =>
-                      console.error("Failed to load certificate image")
-                    }
-                  />
-                </div>
-                <div className="w-full flex justify-end gap-3 p-4 bg-zinc-900/90 border-t border-cyan-700/30">
-                  <Button
-                    variant="destructive"
-                    className="flex items-center gap-2 px-5 py-2 rounded-lg font-semibold"
-                    onClick={() => setShowCert(false)}
-                  >
-                    <X className="w-5 h-5" />
-                    Close
-                  </Button>
-                  <a
-                    href={CERT_PNG}
-                    download
-                    className="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-cyan-500/80 text-zinc-900 font-semibold shadow-lg shadow-cyan-500/20 hover:bg-cyan-400 transition-colors backdrop-blur"
-                  >
-                    <Download className="w-5 h-5" />
-                    Download
-                  </a>
-                </div>
+                {currentCertificate && (
+                  <>
+                    <div className="w-full px-4 py-3 bg-zinc-900/90 border-b border-cyan-700/30">
+                      <h3 className="text-xl font-bold text-cyan-400 mb-1">
+                        {currentCertificate.title}
+                      </h3>
+                      <p className="text-zinc-400 text-sm">
+                        {currentCertificate.provider} •{" "}
+                        {currentCertificate.date}
+                      </p>
+                    </div>
+                    <div className="flex-1 w-full flex justify-center bg-zinc-800/80 p-2">
+                      {currentCertificate.imagePath.endsWith(".pdf") ? (
+                        <div className="w-full flex flex-col items-center">
+                          {/* Primary: Simple iframe (more reliable) */}
+                          <iframe
+                            src={currentCertificate.imagePath}
+                            className="w-full h-[60vh] rounded-lg border border-cyan-400/20"
+                            title={currentCertificate.title}
+                            onError={() => {
+                              console.error(
+                                "iframe failed to load PDF:",
+                                currentCertificate.imagePath,
+                              );
+                              // Could implement react-pdf fallback here if needed
+                            }}
+                          />
+                          {/* Optional: Add a note about browser PDF viewer */}
+                          <div className="mt-2 text-xs text-zinc-400 text-center">
+                            PDF displayed using browser viewer
+                          </div>
+                        </div>
+                      ) : (
+                        <Image
+                          src={currentCertificate.imagePath}
+                          alt={currentCertificate.title}
+                          width={800}
+                          height={600}
+                          className="w-full max-h-[60vh] object-contain rounded-lg border border-cyan-400/20"
+                          onError={() =>
+                            console.error("Failed to load certificate image")
+                          }
+                        />
+                      )}
+                    </div>
+                    <div className="w-full flex justify-end gap-3 p-3 bg-zinc-900/90 border-t border-cyan-700/30">
+                      <Button
+                        variant="destructive"
+                        className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold"
+                        onClick={() => setShowCert(false)}
+                      >
+                        <X className="w-4 h-4" />
+                        Close
+                      </Button>
+                      <a
+                        href={currentCertificate.imagePath}
+                        download
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cyan-500/80 text-zinc-900 font-semibold shadow-lg shadow-cyan-500/20 hover:bg-cyan-400 transition-colors backdrop-blur"
+                      >
+                        <Download className="w-4 h-4" />
+                        Download
+                      </a>
+                    </div>
+                  </>
+                )}
               </motion.div>
             </motion.div>
           )}
