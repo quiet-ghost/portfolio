@@ -207,7 +207,7 @@ const courses: Course[] = [
       provider: "Coursera",
       date: "Summer 2025",
       imagePath:
-        "/Certificates/Coursera 6RTCH4DQZY6B-SoftwareDevelopment-1.png",
+        "/Certificates/Coursera-6RTCH4DQZY6B-SoftwareDevelopment-1.png",
     },
   },
 ];
@@ -245,8 +245,6 @@ function CourseCard({
         return isDark ? "#22d3ee" : "#0891b2";
     }
   };
-
-
 
   return (
     <motion.div
@@ -314,12 +312,8 @@ function CourseCard({
               {course.status === "completed" && (
                 <CheckCircle className="w-3 h-3" />
               )}
-              {course.status === "in progress" && (
-                <Timer className="w-3 h-3" />
-              )}
-              {course.status === "upcoming" && (
-                <Clock className="w-3 h-3" />
-              )}
+              {course.status === "in progress" && <Timer className="w-3 h-3" />}
+              {course.status === "upcoming" && <Clock className="w-3 h-3" />}
               {course.status}
             </Badge>
           </div>
@@ -691,7 +685,9 @@ export function Education() {
                               {course.title}
                             </h3>
                             <div className="flex items-center gap-4 text-sm opacity-70">
-                              <span className="font-medium">{course.institution}</span>
+                              <span className="font-medium">
+                                {course.institution}
+                              </span>
                               <span className="font-medium">{course.date}</span>
                               <span className="capitalize font-medium">
                                 {course.status}
