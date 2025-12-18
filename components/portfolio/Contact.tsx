@@ -18,13 +18,24 @@ export function Contact() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      if (res.ok) {
+      
+      // Parse response body
+      const data = await res.json();
+      
+      // Log for debugging in development
+      if (process.env.NODE_ENV === 'development') {
+        console.log("Contact API Response:", { status: res.status, data });
+      }
+      
+      if (res.ok && data.success) {
         setStatus("success");
         setForm({ name: "", email: "", message: "" });
       } else {
+        console.error("Contact form failed:", data);
         setStatus("error");
       }
-    } catch {
+    } catch (error) {
+      console.error("Contact form error:", error);
       setStatus("error");
     } finally {
       setLoading(false);
@@ -138,7 +149,13 @@ export function Contact() {
         )}
         {status === "error" && (
           <p className="mt-4 text-red-400 font-medium text-center">
-            Something went wrong. Please try again later.
+            Something went wrong. Please try again or email me directly at{" "}
+            <a 
+              href="mailto:ksclafani@quietghost.dev" 
+              className="underline hover:text-red-300"
+            >
+              ksclafani@quietghost.dev
+            </a>
           </p>
         )}
       </motion.div>
