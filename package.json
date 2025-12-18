@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/generate-email-template.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-email": "node scripts/generate-email-template.mjs"
   },
   "dependencies": {
     "@heroui/navbar": "^2.2.19",
