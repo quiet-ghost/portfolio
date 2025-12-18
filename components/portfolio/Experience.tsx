@@ -30,16 +30,16 @@ const experiences = [
     location: "Alpharetta, GA",
     period: "Jan 2022 – Current",
     description: [
-      "Ensure all customer orders are valid and charged correctly.",
-      "Devise effective and efficient methods to implement into day to day proceedures.",
-      "Communicate with other departments regarding inventory or order issues.",
-      "Execute daily fulfillment operations and prioritize customer orders.",
-      "Develop and implement procedures with new systems.",
-      "Assign tasks and provide direction to team members.",
-      "Assist in employee reviews and provide feedback to management.",
+      "Developed in house tool to allow more effective workflow for employees and operators",
+      "Ensure all customer orders are valid and charged correctly",
+      "Devise effective and efficient methods to implement into day to day proceedures",
+      "Communicate with other departments regarding inventory or order issues",
+      "Execute daily fulfillment operations and prioritize customer orders",
+      "Supervise and instruct teams upwards to ~100 employees",
+      "Develop and implement procedures with new systems",
+      "Assist in employee reviews and provide feedback to management",
       "Point person for new process implementation along side owner with communication and about new software",
-      "Continually learn and develop skills relevant to the position.",
-      "Developed in house tool to allow more effective workflow for employees and operators.",
+      "Continually learn and develop skills relevant to the position",
     ],
     tech: [
       "Inventory Management",
@@ -78,6 +78,7 @@ const experiences = [
     description: [
       "Large scale inventory management",
       "Placed daily orders to fulfill warehouse stock",
+      "Oversaw and directed teams upwards to ~13 employees",
       "Planned and executed new procedures to establish the most efficient process to complete daily tasks",
       "Communicated with vendors to coordinate returns or shipments of products",
       "Picked tickets for materials of assigned departments",
@@ -97,10 +98,10 @@ const experiences = [
     location: "Kennesaw, GA",
     period: "Apr 2014 – Dec 2015",
     description: [
-      "Cash handling and Point of Sale operations.",
-      "Supervised multiple people and helped exceed sales goals.",
-      "Responsible for end of day procedure and deposit.",
-      "Customer service and follow-up calls.",
+      "Cash handling and Point of Sale operations",
+      "Supervised multiple people and helped exceed sales goals",
+      "Responsible for end of day procedure and deposit",
+      "Customer service and follow-up calls",
     ],
     tech: ["Sales", "POS Systems", "Customer Service"],
   },
@@ -113,8 +114,8 @@ export function Experience() {
     <Section id="experience" variant="card" className="max-w-4xl mx-auto">
       <div className="flex items-center justify-between mb-8">
         <h2
-          className={`text-4xl font-bold bg-gradient-to-r bg-clip-text text-transparent ${
-            isDark ? "from-cyan-400 to-blue-400" : "from-cyan-600 to-blue-600"
+          className={`text-4xl font-bold ${
+            isDark ? "text-cyan-400" : "text-cyan-600"
           }`}
         >
           Experience
@@ -124,7 +125,7 @@ export function Experience() {
           className="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-cyan-500/80 text-zinc-900 font-semibold shadow-lg shadow-cyan-500/20 hover:bg-cyan-400 transition-colors backdrop-blur"
         >
           <FileDown className="w-5 h-5" />
-          View CV
+          View Resume
         </Button>
       </div>
 

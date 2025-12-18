@@ -147,23 +147,35 @@ const courses: Course[] = [
     institution: "Gwinnett Technical College",
     date: "Fall 2025",
     icon: "devicon:java",
-    status: "in progress",
+    status: "completed",
+    type: "course",
+    skills: ["Algorithms", "Exception Handling", "JavaFX", "Data Structures"],
+    description:
+      "Advanced Java concepts including Data Structures, Algorithms, JavaFX, Exception Handling, GUI applications.",
+  },
+  {
+    id: "cpp1",
+    title: "C++ I",
+    institution: "Gwinnett Technical College",
+    date: "Spring 2026",
+    icon: "devicon:cplusplus",
+    status: "upcoming",
     type: "course",
     skills: [
-      "JDBC",
-      "Multithreading",
-      "Socket Programming",
-      "RMI",
-      "Enterprise Patterns",
+      "Basic Concepts",
+      "I/O control",
+      "Pointers",
+      "Data Managing",
+      "Arrays",
     ],
     description:
-      "Advanced Java concepts including database connectivity, concurrent programming, and distributed systems.",
+      "C++ I includes C++ concepts, simple I/O and expressions, I/O and control statements, arrays, pointers, structures, managing data.",
   },
   {
     id: "amazonJrDev",
     title: "Amazon Junior Developer Course",
     institution: "Coursera",
-    date: "Summer/Fall 2025",
+    date: "TBD",
     icon: "devicon:java",
     status: "in progress",
     type: "certification",
@@ -500,8 +512,8 @@ export function Education() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2
-            className={`text-4xl font-bold mb-4 bg-gradient-to-r bg-clip-text text-transparent ${
-              isDark ? "from-cyan-400 to-blue-400" : "from-cyan-600 to-blue-600"
+            className={`text-4xl font-bold mb-4 ${
+              isDark ? "text-cyan-400" : "text-cyan-600"
             }`}
           >
             Education & Certifications

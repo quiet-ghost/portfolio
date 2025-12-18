@@ -44,10 +44,10 @@ export function AvailableForProjects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className={`text-4xl md:text-5xl font-bold mb-8 pb-2 bg-gradient-to-r bg-clip-text text-transparent leading-tight ${
+            className={`text-4xl md:text-5xl font-bold mb-8 pb-2 leading-tight ${
               isDark
-                ? "from-cyan-400 via-blue-400 to-purple-400"
-                : "from-cyan-600 via-blue-600 to-purple-600"
+                ? "text-cyan-400"
+                : "text-cyan-600"
             }`}
           >
             Let&apos;s Build Something Together
@@ -181,7 +181,7 @@ export function AvailableForProjects() {
           >
             <Button
               asChild
-              className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-semibold px-8 py-3 rounded-xl shadow-lg shadow-cyan-500/25 transition-all duration-300 group"
+              className="bg-cyan-500 hover:bg-cyan-400 text-white font-semibold px-8 py-3 rounded-xl shadow-lg shadow-cyan-500/25 transition-all duration-300 group"
             >
               <a href="#contact" className="flex items-center gap-2">
                 <Mail className="w-5 h-5" />
@@ -217,7 +217,9 @@ export function AvailableForProjects() {
 
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-cyan-400/5 to-blue-400/5 rounded-full blur-3xl" />
+        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl ${
+          isDark ? "bg-cyan-400/8" : "bg-cyan-400/4"
+        }`} />
       </div>
     </section>
   );

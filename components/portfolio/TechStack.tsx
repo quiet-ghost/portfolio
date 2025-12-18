@@ -31,9 +31,19 @@ const techList = [
     category: "Database",
     icon: "devicon:supabase",
   },
+  { name: "Git", category: "Version Control", icon: "devicon:git" },
+  { name: "Linux", category: "Tools", icon: "devicon:linux" },
+  { name: "npm", category: "Tools", icon: "devicon:npm" },
 ];
 
-const techCategories = ["All", "Frontend", "Backend", "Database"];
+const techCategories = [
+  "All",
+  "Frontend",
+  "Backend",
+  "Database",
+  "Version Control",
+  "Tools",
+];
 
 export function TechStack() {
   const [filter, setFilter] = useState("All");
@@ -56,11 +66,19 @@ export function TechStack() {
         style={{ willChange: "transform, opacity" }}
       >
         <h2
-          className={`text-4xl font-bold mb-8 text-center bg-gradient-to-r bg-clip-text text-transparent ${
-            isDark ? "from-cyan-400 to-blue-400" : "from-cyan-600 to-blue-600"
+          className={`text-4xl font-bold mb-2 text-center ${
+            isDark ? "text-cyan-400" : "text-cyan-600"
           }`}
         >
           Tech Stack
+        </h2>
+        <h2
+          className={`text-base font-normal mb-8 text-center ${
+            isDark ? "text-gray-400" : "text-gray-600"
+          }`}
+        >
+          decent understanding, not as much experience in a professional
+          environment. Still learning...
         </h2>
 
         <div className="flex flex-wrap justify-center gap-3 mb-8">

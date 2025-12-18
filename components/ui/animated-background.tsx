@@ -83,19 +83,19 @@ export function AnimatedBackground() {
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden">
-      {/* Gradient mesh background */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${
+      {/* Solid color background overlay */}
+      <div className={`absolute inset-0 ${
         isDark 
-          ? 'from-cyan-500/5 via-blue-500/5 to-purple-500/5' 
-          : 'from-cyan-500/3 via-blue-500/3 to-purple-500/3'
+          ? 'bg-cyan-500/3' 
+          : 'bg-cyan-500/2'
       }`} />
       
-      {/* Animated gradient orbs */}
+      {/* Animated solid color orbs */}
       <motion.div
         className={`absolute w-96 h-96 rounded-full blur-3xl ${
           isDark 
-            ? 'bg-gradient-to-r from-cyan-400/10 to-blue-400/10' 
-            : 'bg-gradient-to-r from-cyan-400/5 to-blue-400/5'
+            ? 'bg-cyan-400/8' 
+            : 'bg-cyan-400/4'
         }`}
         animate={{
           x: [0, 100, 0],
@@ -116,8 +116,8 @@ export function AnimatedBackground() {
       <motion.div
         className={`absolute w-80 h-80 rounded-full blur-3xl ${
           isDark 
-            ? 'bg-gradient-to-r from-purple-400/10 to-pink-400/10' 
-            : 'bg-gradient-to-r from-purple-400/5 to-pink-400/5'
+            ? 'bg-cyan-500/6' 
+            : 'bg-cyan-500/3'
         }`}
         animate={{
           x: [0, -80, 0],
@@ -136,7 +136,11 @@ export function AnimatedBackground() {
       />
       
       <motion.div
-        className="absolute w-72 h-72 rounded-full bg-gradient-to-r from-blue-400/10 to-cyan-400/10 blur-3xl"
+        className={`absolute w-72 h-72 rounded-full blur-3xl ${
+          isDark 
+            ? 'bg-cyan-600/8' 
+            : 'bg-cyan-600/4'
+        }`}
         animate={{
           x: [0, 60, 0],
           y: [0, -40, 0],
@@ -179,7 +183,9 @@ export function AnimatedBackground() {
 
       {/* Mouse follower effect */}
       <motion.div
-        className="absolute w-32 h-32 rounded-full bg-gradient-to-r from-cyan-400/5 to-blue-400/5 blur-2xl pointer-events-none"
+        className={`absolute w-32 h-32 rounded-full blur-2xl pointer-events-none ${
+          isDark ? 'bg-cyan-400/8' : 'bg-cyan-400/4'
+        }`}
         animate={{
           x: mousePosition.x - 64,
           y: mousePosition.y - 64,
