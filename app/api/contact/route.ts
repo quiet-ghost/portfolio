@@ -6,7 +6,7 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export const runtime = "edge";
+// export const runtime = "edge"; // assuming this breaks the message send and causes error.
 
 export async function POST(req: Request) {
   try {

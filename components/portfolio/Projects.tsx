@@ -23,8 +23,8 @@ export function Projects() {
         style={{ willChange: "transform, opacity" }}
       >
         <h2
-          className={`text-4xl font-bold mb-8 text-center bg-gradient-to-r bg-clip-text text-transparent ${
-            isDark ? "from-cyan-400 to-blue-400" : "from-cyan-600 to-blue-600"
+          className={`text-4xl font-bold mb-8 text-center ${
+            isDark ? "text-cyan-400" : "text-cyan-600"
           }`}
         >
           Featured Projects
@@ -157,18 +157,20 @@ export function Projects() {
                       Mux-Sesh
                     </h3>
                     <div className="flex flex-wrap gap-2 mt-2">
-                      {["Go", "Bubble Tea", "tmux", "CLI"].map((tech) => (
-                        <span
-                          key={tech}
-                          className={`rounded-full px-3 py-1 text-xs font-medium border ${
-                            isDark
-                              ? "bg-zinc-700/80 border-cyan-400/30 text-cyan-400"
-                              : "bg-cyan-100 border-cyan-300 text-cyan-800"
-                          }`}
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                      {["Typescript", "OpenTui", "Tmux", "CLI", "Bun"].map(
+                        (tech) => (
+                          <span
+                            key={tech}
+                            className={`rounded-full px-3 py-1 text-xs font-medium border ${
+                              isDark
+                                ? "bg-zinc-700/80 border-cyan-400/30 text-cyan-400"
+                                : "bg-cyan-100 border-cyan-300 text-cyan-800"
+                            }`}
+                          >
+                            {tech}
+                          </span>
+                        ),
+                      )}
                     </div>
                   </div>
                 </div>
@@ -195,6 +197,21 @@ export function Projects() {
                     >
                       <GitBranch className="h-4 w-4 mr-2" />
                       View Code
+                    </a>
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-zinc-400 hover:text-cyan-400 hover:bg-zinc-900/60"
+                    asChild
+                  >
+                    <a
+                      href="https://www.npmjs.com/package/mux-sesh"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <GitBranch className="h-4 w-4 mr-2" />
+                      View Package
                     </a>
                   </Button>
                 </div>

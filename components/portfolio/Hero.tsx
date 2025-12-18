@@ -98,10 +98,10 @@ export default function Hero() {
                 y: { duration: 0.6 },
               }}
               style={{ willChange: "transform, opacity" }}
-              className={`text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r bg-clip-text text-transparent ${
+              className={`text-5xl md:text-6xl font-bold mb-6 ${
                 isDark
-                  ? "from-cyan-400 via-blue-400 to-purple-400"
-                  : "from-cyan-600 via-blue-600 to-purple-600"
+                  ? "text-cyan-400"
+                  : "text-cyan-600"
               }`}
             >
               Kevin Sclafani
