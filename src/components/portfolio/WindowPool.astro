@@ -1,0 +1,153 @@
+---
+import type { SocialLink } from "@/types/portfolio";
+
+interface Props {
+  email: string;
+  location: string;
+  resumePath: string;
+  socials: SocialLink[];
+}
+
+const { email, location, resumePath, socials } = Astro.props;
+---
+
+<section class="window-pool" hidden aria-hidden="true">
+  <section class="terminal tile" id="contact-window" data-window="contact" data-focus="contact" hidden draggable="true">
+    <div class="term-head">
+      <p>~/contact</p>
+      <div class="head-actions">
+        <span class="head-meta">pane:contact</span>
+        <button type="button" class="close-btn" data-close-window="contact" aria-label="Close contact window">
+          close
+        </button>
+      </div>
+    </div>
+
+    <div class="term-body compact">
+      <p class="prompt-line">
+        <span class="prompt-path">~/contact</span>
+        <span class="prompt-branch"> dev</span>
+        <span class="prompt-mark"> ❯ </span>
+        compose-message
+      </p>
+
+      <p class="line accent">Send a message directly from this pane.</p>
+      <p class="line muted">Submissions are sent directly and include an auto-reply.</p>
+
+      <dl class="pane-meta">
+        <div>
+          <dt>target</dt>
+          <dd>{email}</dd>
+        </div>
+        <div>
+          <dt>location</dt>
+          <dd>{location}</dd>
+        </div>
+      </dl>
+
+      <form class="contact-form" data-contact-form>
+        <label class="contact-honeypot" aria-hidden="true">
+          <span>Company</span>
+          <input name="company" type="text" tabindex="-1" autocomplete="off" />
+        </label>
+        <label>
+          <span>Name</span>
+          <input name="name" type="text" placeholder="Your name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input name="email" type="email" placeholder="you@example.com" required />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="6" placeholder="Tell me what you are building" required></textarea>
+        </label>
+
+        <div class="turnstile-wrap" data-turnstile-wrap>
+          <div class="turnstile-slot" data-turnstile-slot></div>
+        </div>
+
+        <button type="submit">send message</button>
+        <p class="line muted contact-status" data-contact-status role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="command-links compact">
+        <a href={`mailto:${email}`}>direct: {email}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="terminal tile" id="resume-window" data-window="resume" data-focus="resume" hidden draggable="true">
+    <div class="term-head">
+      <p>~/resume</p>
+      <div class="head-actions">
+        <span class="head-meta">pane:resume</span>
+        <button type="button" class="close-btn" data-close-window="resume" aria-label="Close resume window">
+          close
+        </button>
+      </div>
+    </div>
+
+    <div class="term-body compact">
+      <p class="prompt-line">
+        <span class="prompt-path">~/resume</span>
+        <span class="prompt-branch"> dev</span>
+        <span class="prompt-mark"> ❯ </span>
+        open cv.pdf
+      </p>
+
+      <p class="line accent">Resume viewer and export actions.</p>
+
+      <dl class="pane-meta">
+        <div>
+          <dt>file</dt>
+          <dd>resume.pdf</dd>
+        </div>
+        <div>
+          <dt>source</dt>
+          <dd>{resumePath}</dd>
+        </div>
+      </dl>
+
+      <div class="resume-actions">
+        <a href={resumePath} target="_blank" rel="noopener noreferrer">open in new tab</a>
+        <a href={resumePath} download>download</a>
+      </div>
+
+      <object data={resumePath} type="application/pdf" class="resume-frame">
+        <a href={resumePath} target="_blank" rel="noopener noreferrer">Open resume PDF</a>
+      </object>
+    </div>
+  </section>
+
+  <section class="terminal tile" id="socials-window" data-window="socials" data-focus="socials" hidden draggable="true">
+    <div class="term-head">
+      <p>~/socials</p>
+      <div class="head-actions">
+        <span class="head-meta">pane:socials</span>
+        <button type="button" class="close-btn" data-close-window="socials" aria-label="Close socials window">
+          close
+        </button>
+      </div>
+    </div>
+
+    <div class="term-body compact">
+      <p class="prompt-line">
+        <span class="prompt-path">~/socials</span>
+        <span class="prompt-branch"> dev</span>
+        <span class="prompt-mark"> ❯ </span>
+        cat links.txt
+      </p>
+
+      <ul class="social-list">
+        {socials.map((item) => (
+          <li>
+            <a href={item.url} target="_blank" rel="noopener noreferrer">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</section>

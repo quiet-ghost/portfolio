@@ -1,0 +1,39 @@
+---
+import type { Keybind } from "@/types/portfolio";
+
+interface Props {
+  keybinds: Keybind[];
+  email: string;
+}
+
+const { keybinds, email } = Astro.props;
+---
+
+<nav class="tmux-bottom" aria-label="Sticky keybind navigation">
+  {keybinds.map((item) => (
+    <button
+      type="button"
+      data-keybind={item.key.toLowerCase()}
+      data-open-pane={item.openPane}
+      data-run-main={item.runMain}
+    >
+      <kbd>{item.key}</kbd>
+      <span>{item.label}</span>
+    </button>
+  ))}
+
+  <button type="button" data-open-pane="resume">
+    <kbd>R</kbd>
+    <span>resume</span>
+  </button>
+
+  <a href={`mailto:${email}`}>
+    <kbd>E</kbd>
+    <span>email</span>
+  </a>
+
+  <button type="button" data-close-focused>
+    <kbd>X</kbd>
+    <span>close focused</span>
+  </button>
+</nav>

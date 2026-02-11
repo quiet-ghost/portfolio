@@ -1,0 +1,16 @@
+{
+  "order": 50,
+  "title": "Java Programming 1",
+  "institution": "Gwinnett Technical College",
+  "term": "Summer 2025",
+  "status": "completed",
+  "kind": "course",
+  "skills": [
+    "Java Syntax",
+    "OOP Principles",
+    "Inheritance",
+    "Polymorphism",
+    "Exception Handling"
+  ],
+  "description": "Object-oriented programming with Java, with emphasis on software design principles and professional coding practices."
+}

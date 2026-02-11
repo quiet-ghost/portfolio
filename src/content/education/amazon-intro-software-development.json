@@ -1,0 +1,24 @@
+{
+  "order": 80,
+  "title": "Amazon Introduction to Software Development",
+  "institution": "Coursera",
+  "term": "Summer 2025",
+  "status": "completed",
+  "kind": "certification",
+  "skills": [
+    "Java",
+    "Program Development",
+    "Programming Principles",
+    "SDLC",
+    "Object-oriented Programming",
+    "Test Driven Development"
+  ],
+  "description": "Java programming, object-oriented design, data structures, and algorithms.",
+  "link": "https://www.coursera.org/account/accomplishments/verify/6RTCH4DQZY6B",
+  "certificate": {
+    "title": "Amazon Introduction to Software Development",
+    "provider": "Coursera",
+    "date": "Summer 2025",
+    "imagePath": "/Certificates/Coursera-6RTCH4DQZY6B-SoftwareDevelopment-1.png"
+  }
+}

@@ -1,0 +1,25 @@
+RESEND_API_KEY=""
+
+# Verified sender (required)
+CONTACT_FROM_EMAIL="contact@contact.quietghost.dev"
+
+# Optional override (defaults to ksclafani@quietghost.dev)
+CONTACT_TO_EMAIL="ksclafani@quietghost.dev"
+
+# Optional override (defaults to CONTACT_FROM_EMAIL)
+CONTACT_AUTO_REPLY_FROM_EMAIL="contact@contact.quietghost.dev"
+
+# Turnstile widget keys
+TURNSTILE_SITE_KEY=""
+TURNSTILE_SECRET_KEY=""
+
+# For localhost testing, either:
+# 1) Add localhost and 127.0.0.1 hostnames to your widget, or
+# 2) use Cloudflare Turnstile test keys.
+
+# Optional comma-separated hostnames to enforce (example: quietghost.dev,www.quietghost.dev)
+TURNSTILE_ALLOWED_HOSTNAMES=""
+
+# Optional app-level contact rate limit (defaults: 6 requests per 600s per IP)
+CONTACT_RATE_LIMIT_MAX="6"
+CONTACT_RATE_LIMIT_WINDOW_SECONDS="600"

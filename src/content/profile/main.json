@@ -1,0 +1,30 @@
+{
+  "fullName": "Kevin Sclafani",
+  "headline": "Software Developer Student",
+  "location": "Georgia, United States",
+  "about": "I am a Computer Programming student pursuing an AAS at Gwinnett Technical College. I enjoy problem solving, automation, and working with data, and I am actively looking for internship opportunities where I can keep leveling up as an engineer.",
+  "email": "ksclafani@quietghost.dev",
+  "availability": {
+    "status": "open",
+    "label": "Available for Internships",
+    "note": "Open to remote and on-site opportunities while balancing full-time work."
+  },
+  "resumePath": "/cv.pdf",
+  "avatar": "/social.png",
+  "socials": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/quiet-ghost"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/ksclafani"
+    }
+  ],
+  "focusAreas": [
+    "Web Development",
+    "Automation",
+    "Data Workflows",
+    "Developer Tooling"
+  ]
+}

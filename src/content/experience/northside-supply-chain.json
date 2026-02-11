@@ -1,0 +1,22 @@
+{
+  "order": 40,
+  "type": "work",
+  "role": "Supply Chain Tech Lead - Supply Chain Management",
+  "organization": "Northside Forsyth Hospital",
+  "location": "Cumming, GA",
+  "period": "Jan 2016 - Aug 2021",
+  "highlights": [
+    "Managed large-scale inventory operations and daily warehouse replenishment.",
+    "Planned and executed updated procedures to improve day-to-day efficiency.",
+    "Coordinated with vendors on returns and incoming shipments.",
+    "Prepared and fulfilled material tickets for assigned departments.",
+    "Optimized storage layouts to reduce movement time and labor overhead."
+  ],
+  "technologies": [
+    "Supply Chain Management",
+    "Inventory Management",
+    "Vendor Relations",
+    "Process Optimization",
+    "Warehouse Operations"
+  ]
+}

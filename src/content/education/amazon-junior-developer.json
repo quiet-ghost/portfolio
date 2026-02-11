@@ -1,0 +1,21 @@
+{
+  "order": 70,
+  "title": "Amazon Junior Developer Course",
+  "institution": "Coursera",
+  "term": "Summer/Fall 2025",
+  "status": "in-progress",
+  "kind": "certification",
+  "skills": [
+    "Java",
+    "Systems Development",
+    "Full-Stack Development",
+    "SQL",
+    "Generative AI",
+    "JUnit",
+    "SDLC",
+    "Object-oriented Programming",
+    "Test Driven Development"
+  ],
+  "description": "Java programming, object-oriented design, data structures, algorithms, SQL, and full-stack web development with Spring Boot through hands-on projects.",
+  "link": "https://www.coursera.org/professional-certificates/amazon-junior-software-developer"
+}

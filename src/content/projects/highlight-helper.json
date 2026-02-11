@@ -1,0 +1,14 @@
+{
+  "order": 10,
+  "title": "Highlight Helper",
+  "summary": "A productivity tool built to increase day-to-day efficiency across internal workflows.",
+  "status": "active",
+  "technologies": [
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Supabase"
+  ],
+  "repository": "https://github.com/quiet-ghost/highlight-helper",
+  "liveUrl": "https://hl-helper.quietghost.dev"
+}
