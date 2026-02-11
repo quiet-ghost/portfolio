@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600&display=swap");
+
+:root {
+  --bg: #f8f5ef;
+  --bg-2: #ede7dc;
+  --surface: rgba(255, 255, 255, 0.62);
+  --text: #211c17;
+  --muted: #57514a;
+  --line: rgba(33, 28, 23, 0.12);
+  --accent: #b4552d;
+  --accent-2: #145f7f;
+  --shadow: 0 24px 70px rgba(20, 16, 12, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 14% 20%, rgba(180, 85, 45, 0.14), transparent 36%),
+    radial-gradient(circle at 84% 18%, rgba(20, 95, 127, 0.16), transparent 40%),
+    linear-gradient(165deg, var(--bg), var(--bg-2));
+  line-height: 1.55;
+}
+
+.shell {
+  width: min(1060px, calc(100% - 2.6rem));
+  margin: 3.6rem auto 4.2rem;
+  display: grid;
+  gap: 1.6rem;
+}
+
+.hero,
+.status-grid article {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  backdrop-filter: blur(9px);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+.kicker {
+  margin: 0 0 0.55rem;
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: 0.09em;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+
+h1,
+h2 {
+  font-family: "Space Grotesk", sans-serif;
+  line-height: 1.1;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 3.5vw, 3.15rem);
+  max-width: 16ch;
+}
+
+.lede {
+  max-width: 62ch;
+  color: var(--muted);
+  margin: 1rem 0 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.4rem;
+}
+
+.button {
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.15rem;
+  border: 1px solid transparent;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.button.ghost {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--text);
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.status-grid article {
+  padding: 1.05rem 1rem;
+}
+
+.status-grid h2 {
+  font-size: 1rem;
+}
+
+.status-grid p {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shell {
+    width: min(760px, calc(100% - 1.45rem));
+    margin-top: 1.45rem;
+  }
+}

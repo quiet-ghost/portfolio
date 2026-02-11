@@ -19,6 +19,11 @@
 
 # production
 /build
+/dist
+
+# astro / cloudflare
+/.astro
+/.wrangler
 
 # misc
 .DS_Store
@@ -42,3 +47,12 @@ next-env.d.ts
 
 # Worktree directories
 /.worktrees/
+
+# Local planning artifacts
+.plan/
+
+# Local merge/conflict leftovers
+*sync-conflict*
+*.sync-conflict-*
+*.backup
+*.orig

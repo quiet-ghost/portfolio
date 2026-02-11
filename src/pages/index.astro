@@ -1,0 +1,42 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="quietghost.dev | Astro Rewrite"
+  description="A cleaner, faster portfolio rebuild with Astro and Cloudflare."
+>
+  <main class="shell">
+    <section class="hero">
+      <p class="kicker">Phase 1: Foundation Complete</p>
+      <h1>Astro + Cloudflare scaffold is now active.</h1>
+      <p class="lede">
+        This branch now runs on Astro with Cloudflare Pages configuration in place.
+        Next steps are content extraction, component migration, and full visual redesign.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+          View Resume
+        </a>
+        <a class="button ghost" href="https://github.com/quietghost" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+      </div>
+    </section>
+
+    <section class="status-grid" aria-label="Rewrite progress">
+      <article>
+        <h2>Runtime</h2>
+        <p>Astro static output configured with Cloudflare Pages adapter.</p>
+      </article>
+      <article>
+        <h2>Deployment</h2>
+        <p>`wrangler.jsonc` is set up for Pages local preview and deploy.</p>
+      </article>
+      <article>
+        <h2>Migration Plan</h2>
+        <p>Phase-by-phase roadmap prepared for UX/content redesign.</p>
+      </article>
+    </section>
+  </main>
+</BaseLayout>
