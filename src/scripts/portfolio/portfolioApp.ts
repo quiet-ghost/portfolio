@@ -591,7 +591,7 @@ const initPortfolioApp = (data: PortfolioClientData): void => {
     if (shouldScroll)
       panelByName
         .get(name)
-          ?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        ?.scrollIntoView({ behavior: "smooth", block: "nearest" });
   };
 
   const closePane = (name: string): void => {
@@ -680,13 +680,17 @@ const initPortfolioApp = (data: PortfolioClientData): void => {
     setFocused("boot");
 
     if (name === "projects") {
-      queueCommand("ls -a projects", renderProjects, mainPathFor("projects"));
+      queueCommand(
+        "cd ~/dev/projects ls -a projects",
+        renderProjects,
+        mainPathFor("projects"),
+      );
       return;
     }
 
     if (name === "experience") {
       queueCommand(
-        "ls -a experience",
+        "cd ~/dev/experience ls -a experience",
         renderExperience,
         mainPathFor("experience"),
       );
@@ -695,7 +699,7 @@ const initPortfolioApp = (data: PortfolioClientData): void => {
 
     if (name === "education") {
       queueCommand(
-        "ls -a education",
+        "cd ~/dev/education ls -a education",
         renderEducation,
         mainPathFor("education"),
       );
@@ -738,113 +742,116 @@ const initPortfolioApp = (data: PortfolioClientData): void => {
     });
 
   contactFormEl?.addEventListener("submit", (event) => {
-      const submit = async (): Promise<void> => {
-        event.preventDefault();
-        const form = event.currentTarget;
-        if (!(form instanceof HTMLFormElement)) return;
+    const submit = async (): Promise<void> => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!(form instanceof HTMLFormElement)) return;
 
-        const formData = new FormData(form);
-        const company = String(formData.get("company") || "").trim();
-        const name = String(formData.get("name") || "").trim();
-        const email = String(formData.get("email") || "").trim();
-        const message = String(formData.get("message") || "").trim();
+      const formData = new FormData(form);
+      const company = String(formData.get("company") || "").trim();
+      const name = String(formData.get("name") || "").trim();
+      const email = String(formData.get("email") || "").trim();
+      const message = String(formData.get("message") || "").trim();
 
-        if (company) {
-          setContactStatus("message blocked", "error");
-          return;
-        }
+      if (company) {
+        setContactStatus("message blocked", "error");
+        return;
+      }
 
-        if (!name || !email || !message) {
-          setContactStatus("name, email, and message are required", "error");
-          return;
-        }
+      if (!name || !email || !message) {
+        setContactStatus("name, email, and message are required", "error");
+        return;
+      }
 
-        if (!turnstileReady || !turnstileWidgetId || !window.turnstile) {
-          await initContactTurnstile();
-        }
+      if (!turnstileReady || !turnstileWidgetId || !window.turnstile) {
+        await initContactTurnstile();
+      }
 
-        if (!turnstileReady || !turnstileWidgetId || !window.turnstile) {
-          setContactStatus(
-            turnstileFailureMessage || "verification is still loading",
-            "error",
-          );
-          return;
-        }
-
-        const verificationToken =
-          window.turnstile.getResponse(turnstileWidgetId) || turnstileToken;
-
-        if (!verificationToken) {
-          setContactStatus(
-            turnstileFailureMessage || "complete verification challenge first",
-            "error",
-          );
-          return;
-        }
-
-        const submitButton = form.querySelector<HTMLButtonElement>(
-          "button[type='submit']",
+      if (!turnstileReady || !turnstileWidgetId || !window.turnstile) {
+        setContactStatus(
+          turnstileFailureMessage || "verification is still loading",
+          "error",
         );
-        if (submitButton) submitButton.disabled = true;
+        return;
+      }
 
-        setContactStatus("sending message...", "pending");
+      const verificationToken =
+        window.turnstile.getResponse(turnstileWidgetId) || turnstileToken;
 
+      if (!verificationToken) {
+        setContactStatus(
+          turnstileFailureMessage || "complete verification challenge first",
+          "error",
+        );
+        return;
+      }
+
+      const submitButton = form.querySelector<HTMLButtonElement>(
+        "button[type='submit']",
+      );
+      if (submitButton) submitButton.disabled = true;
+
+      setContactStatus("sending message...", "pending");
+
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            accept: "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            message,
+            company,
+            turnstileToken: verificationToken,
+          }),
+        });
+
+        let payload: Record<string, unknown> | null = null;
         try {
-          const response = await fetch("/api/contact", {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-              accept: "application/json",
-            },
-            body: JSON.stringify({
-              name,
-              email,
-              message,
-              company,
-              turnstileToken: verificationToken,
-            }),
-          });
-
-          let payload: Record<string, unknown> | null = null;
-          try {
-            payload = (await response.json()) as Record<string, unknown>;
-          } catch {
-            payload = null;
-          }
-
-          const isSuccess = payload?.success === true;
-          if (!response.ok || !isSuccess) {
-            const apiError =
-              payload && typeof payload.error === "string" ? payload.error : "";
-            setContactStatus(
-              apiError || "could not send message right now",
-              "error",
-            );
-            return;
-          }
-
-          const warning =
-            payload && typeof payload.warning === "string" ? payload.warning : "";
-
-          setContactStatus(
-            warning
-              ? `sent, but auto-reply may have failed (${warning})`
-              : "message sent. auto-reply should hit your inbox soon",
-            warning ? "muted" : "success",
-          );
-
-          form.reset();
-          turnstileToken = "";
-          window.turnstile.reset(turnstileWidgetId);
+          payload = (await response.json()) as Record<string, unknown>;
         } catch {
-          setContactStatus("network issue, please retry or use direct email", "error");
-        } finally {
-          if (submitButton) submitButton.disabled = false;
+          payload = null;
         }
-      };
 
-      void submit();
-    });
+        const isSuccess = payload?.success === true;
+        if (!response.ok || !isSuccess) {
+          const apiError =
+            payload && typeof payload.error === "string" ? payload.error : "";
+          setContactStatus(
+            apiError || "could not send message right now",
+            "error",
+          );
+          return;
+        }
+
+        const warning =
+          payload && typeof payload.warning === "string" ? payload.warning : "";
+
+        setContactStatus(
+          warning
+            ? `sent, but auto-reply may have failed (${warning})`
+            : "message sent. auto-reply should hit your inbox soon",
+          warning ? "muted" : "success",
+        );
+
+        form.reset();
+        turnstileToken = "";
+        window.turnstile.reset(turnstileWidgetId);
+      } catch {
+        setContactStatus(
+          "network issue, please retry or use direct email",
+          "error",
+        );
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+      }
+    };
+
+    void submit();
+  });
 
   const isTypingTarget = (target: EventTarget | null): boolean => {
     if (!(target instanceof HTMLElement)) return false;
