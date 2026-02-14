@@ -681,7 +681,7 @@ const initPortfolioApp = (data: PortfolioClientData): void => {
 
     if (name === "projects") {
       queueCommand(
-        "cd ~/dev/projects ls -a projects",
+        "cd ~/dev/projects && ls -a projects",
         renderProjects,
         mainPathFor("projects"),
       );
@@ -690,7 +690,7 @@ const initPortfolioApp = (data: PortfolioClientData): void => {
 
     if (name === "experience") {
       queueCommand(
-        "cd ~/dev/experience ls -a experience",
+        "cd ~/dev/experience && ls -a experience",
         renderExperience,
         mainPathFor("experience"),
       );
@@ -699,7 +699,7 @@ const initPortfolioApp = (data: PortfolioClientData): void => {
 
     if (name === "education") {
       queueCommand(
-        "cd ~/dev/education ls -a education",
+        "cd ~/dev/education && ls -a education",
         renderEducation,
         mainPathFor("education"),
       );
