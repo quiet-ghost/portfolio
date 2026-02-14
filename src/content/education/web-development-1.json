@@ -1,0 +1,15 @@
+{
+  "order": 10,
+  "title": "Web Development 1",
+  "institution": "Gwinnett Technical College",
+  "term": "Fall 2024",
+  "status": "completed",
+  "kind": "course",
+  "skills": [
+    "HTML5",
+    "CSS3",
+    "Responsive Design",
+    "Web Accessibility"
+  ],
+  "description": "Foundation of web development with semantic HTML and modern CSS. Learned to build responsive and accessible websites using current web standards."
+}

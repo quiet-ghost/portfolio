@@ -1,0 +1,159 @@
+---
+interface Props {
+  availabilityLabel: string;
+  email: string;
+}
+
+const { availabilityLabel, email } = Astro.props;
+---
+
+<section class="layout">
+  <section class="top-row" data-top-row>
+    <section class="terminal boot" data-focus="boot">
+      <div class="term-body boot-body" data-main-body>
+        <div class="main-output" data-main-output>
+          <p class="prompt-line">
+            <span class="prompt-path">~/dev</span>
+            <span class="prompt-branch"> dev</span>
+            <span class="prompt-mark"> ❯ </span>
+            <span data-typed-command></span>
+            <span class="cursor" data-command-cursor aria-hidden="true"></span>
+          </p>
+
+          <p class="line accent" data-output-name></p>
+          <p class="line iris" data-output-headline></p>
+          <p class="line muted" data-output-about></p>
+
+          <p class="status-line" data-status-line hidden>
+            <span class="status-dot" aria-hidden="true"></span>
+            {availabilityLabel}
+          </p>
+
+          <p class="prompt-line" data-ls-prompt hidden>
+            <span class="prompt-path">~/dev</span>
+            <span class="prompt-branch"> dev</span>
+            <span class="prompt-mark"> ❯ </span>
+            <span data-typed-ls></span>
+            <span class="cursor" data-ls-cursor aria-hidden="true"></span>
+          </p>
+
+          <div class="ls-output" data-ls-output hidden>
+            <p class="ls-header" aria-hidden="true">
+              <span class="perm">Permissions</span>
+              <span class="size">Size</span>
+              <span class="user">User</span>
+              <span class="date">Date Modified</span>
+              <span class="name">Name</span>
+            </p>
+
+            <button type="button" class="ls-row" data-run-main="projects">
+              <span class="perm">drwxr-xr-x</span>
+              <span class="size">-</span>
+              <span class="user">ghost</span>
+              <span class="date">today</span>
+              <span class="name dir">
+                <svg class="devicon devicon-folder" viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path d="M1.75 4.25h4.3l1.35 1.5H14.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M1.75 4.25v7.5a1 1 0 0 0 1 1h10.5a1 1 0 0 0 1-1V5.75a1 1 0 0 0-1-1h-5.1" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span class="name-label">projects/</span>
+              </span>
+            </button>
+            <button type="button" class="ls-row" data-run-main="experience">
+              <span class="perm">drwxr-xr-x</span>
+              <span class="size">-</span>
+              <span class="user">ghost</span>
+              <span class="date">today</span>
+              <span class="name dir">
+                <svg class="devicon devicon-folder" viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path d="M1.75 4.25h4.3l1.35 1.5H14.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M1.75 4.25v7.5a1 1 0 0 0 1 1h10.5a1 1 0 0 0 1-1V5.75a1 1 0 0 0-1-1h-5.1" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span class="name-label">experience/</span>
+              </span>
+            </button>
+            <button type="button" class="ls-row" data-run-main="education">
+              <span class="perm">drwxr-xr-x</span>
+              <span class="size">-</span>
+              <span class="user">ghost</span>
+              <span class="date">today</span>
+              <span class="name dir">
+                <svg class="devicon devicon-folder" viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path d="M1.75 4.25h4.3l1.35 1.5H14.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M1.75 4.25v7.5a1 1 0 0 0 1 1h10.5a1 1 0 0 0 1-1V5.75a1 1 0 0 0-1-1h-5.1" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span class="name-label">education/</span>
+              </span>
+            </button>
+            <button type="button" class="ls-row" data-open-pane="contact">
+              <span class="perm">drwxr-xr-x</span>
+              <span class="size">-</span>
+              <span class="user">ghost</span>
+              <span class="date">today</span>
+              <span class="name dir">
+                <svg class="devicon devicon-folder" viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path d="M1.75 4.25h4.3l1.35 1.5H14.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M1.75 4.25v7.5a1 1 0 0 0 1 1h10.5a1 1 0 0 0 1-1V5.75a1 1 0 0 0-1-1h-5.1" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span class="name-label">contact/</span>
+              </span>
+            </button>
+            <button type="button" class="ls-row" data-open-pane="socials">
+              <span class="perm">drwxr-xr-x</span>
+              <span class="size">-</span>
+              <span class="user">ghost</span>
+              <span class="date">today</span>
+              <span class="name dir">
+                <svg class="devicon devicon-folder" viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path d="M1.75 4.25h4.3l1.35 1.5H14.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M1.75 4.25v7.5a1 1 0 0 0 1 1h10.5a1 1 0 0 0 1-1V5.75a1 1 0 0 0-1-1h-5.1" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span class="name-label">socials/</span>
+              </span>
+            </button>
+            <button type="button" class="ls-row" data-open-pane="resume">
+              <span class="perm">-rw-r--r--</span>
+              <span class="size">637k</span>
+              <span class="user">ghost</span>
+              <span class="date">today</span>
+              <span class="name file">
+                <svg class="devicon devicon-pdf" viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path d="M4 1.75h5l3 3v9.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-11.5a1 1 0 0 1 1-1z" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M9 1.75v3h3" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M5.25 9.25h5.5" stroke-linecap="round"></path>
+                  <path d="M5.25 11.25h4.2" stroke-linecap="round"></path>
+                </svg>
+                <span class="name-label">resume.pdf</span>
+              </span>
+            </button>
+            <a class="ls-row" href={`mailto:${email}`}>
+              <span class="perm">-rw-r--r--</span>
+              <span class="size">114b</span>
+              <span class="user">ghost</span>
+              <span class="date">today</span>
+              <span class="name file">
+                <svg class="devicon devicon-mail" viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true">
+                  <rect x="2" y="3.25" width="12" height="9.5" rx="1.3" stroke-linejoin="round"></rect>
+                  <path d="M2.8 4.3 8 8.05l5.2-3.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span class="name-label">email.txt</span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <p class="prompt-line ready-prompt" data-ready-prompt hidden>
+          <span class="prompt-path" data-ready-path>~/dev</span>
+          <span class="prompt-branch"> dev</span>
+          <span class="prompt-mark"> ❯ </span>
+          <span data-ready-input></span>
+          <span class="cursor" aria-hidden="true"></span>
+        </p>
+      </div>
+    </section>
+
+    <section class="first-pane-slot" data-first-slot hidden></section>
+  </section>
+
+  <section class="stack" data-stack data-open-count="0"></section>
+</section>

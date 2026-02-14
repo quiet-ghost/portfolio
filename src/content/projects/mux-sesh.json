@@ -1,0 +1,13 @@
+{
+  "order": 20,
+  "title": "Mux-Sesh",
+  "summary": "A fzf-style tmux session manager with GitHub repository cloning and project search tooling.",
+  "status": "active",
+  "technologies": [
+    "Go",
+    "Bubble Tea",
+    "tmux",
+    "CLI"
+  ],
+  "repository": "https://github.com/quiet-ghost/mux-sesh"
+}

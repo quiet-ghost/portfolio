@@ -1,0 +1,21 @@
+{
+  "order": 10,
+  "type": "education",
+  "role": "Student, Computer Programming (AAS)",
+  "organization": "Gwinnett Technical College",
+  "location": "Lawrenceville, GA",
+  "period": "2023 - Present",
+  "highlights": [
+    "Focused on software engineering, web development, and database systems.",
+    "Completed coursework in Java, Python, SQL, and modern web technologies."
+  ],
+  "technologies": [
+    "Java",
+    "Python",
+    "SQL",
+    "JavaScript",
+    "React",
+    "Next.js",
+    "Tailwind CSS"
+  ]
+}

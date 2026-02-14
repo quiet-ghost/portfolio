@@ -1,0 +1,74 @@
+---
+import PortfolioDesktop from "@/components/portfolio/PortfolioDesktop.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type {
+  EducationData,
+  ExperienceData,
+  Keybind,
+  PortfolioClientData,
+  ProfileData,
+  ProjectData,
+  SocialLink,
+} from "@/types/portfolio";
+import { sortEducationEntries } from "@/utils/sortEducation";
+import { getCollection } from "astro:content";
+
+const [profileEntry] = await getCollection("profile");
+
+if (!profileEntry) {
+  throw new Error("Profile content is missing. Add an entry in src/content/profile/.");
+}
+
+const profile = profileEntry.data as ProfileData;
+
+const projects: ProjectData[] = (await getCollection("projects"))
+  .sort((a, b) => a.data.order - b.data.order)
+  .map(({ id, data }) => ({ id, ...data }));
+
+const experience: ExperienceData[] = (await getCollection("experience"))
+  .sort((a, b) => a.data.order - b.data.order)
+  .map(({ id, data }) => ({ id, ...data }));
+
+const educationEntries = (await getCollection("education")).map(({ id, data }) => ({ id, ...data })) as EducationData[];
+const education: EducationData[] = sortEducationEntries(educationEntries);
+
+const rawSocials = profile.socials as SocialLink[];
+const socialMap = new Map<string, SocialLink>(rawSocials.map((entry) => [entry.label.toLowerCase(), entry]));
+
+if (!socialMap.has("x")) {
+  socialMap.set("x", { label: "X", url: "https://x.com/quietghosttv" });
+}
+
+const socials = Array.from(socialMap.values()) as SocialLink[];
+
+const keybinds: Keybind[] = [
+  { key: "1", label: "projects", runMain: "projects" },
+  { key: "2", label: "experience", runMain: "experience" },
+  { key: "3", label: "education", runMain: "education" },
+  { key: "4", label: "contact", openPane: "contact" },
+  { key: "S", label: "socials", openPane: "socials" },
+];
+
+const clientData: PortfolioClientData = {
+  typedName: profile.fullName,
+  typedHeadline: `${profile.headline} - ${profile.location}`,
+  typedAbout: profile.about,
+  resumeHref: profile.resumePath,
+  emailHref: `mailto:${profile.email}`,
+  projectsData: projects,
+  experienceData: experience,
+  educationData: education,
+};
+---
+
+<BaseLayout title={`${profile.fullName} | quietghost.dev`} description={profile.about}>
+  <PortfolioDesktop
+    availabilityLabel={profile.availability.label}
+    email={profile.email}
+    location={profile.location}
+    resumePath={profile.resumePath}
+    socials={socials}
+    keybinds={keybinds}
+    clientData={clientData}
+  />
+</BaseLayout>

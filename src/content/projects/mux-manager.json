@@ -1,0 +1,13 @@
+{
+  "order": 30,
+  "title": "Mux-Manager",
+  "summary": "A Neovim plugin for tmux session workflows with Telescope-powered navigation and live preview.",
+  "status": "active",
+  "technologies": [
+    "Lua",
+    "Neovim",
+    "Telescope",
+    "tmux"
+  ],
+  "repository": "https://github.com/quiet-ghost/mux-manager"
+}

@@ -1,0 +1,26 @@
+{
+  "order": 40,
+  "title": "Complete Python Developer",
+  "institution": "Zero to Mastery",
+  "term": "Spring 2025",
+  "status": "completed",
+  "kind": "certification",
+  "skills": [
+    "Advanced Python",
+    "Web Scraping",
+    "APIs",
+    "Testing",
+    "Django",
+    "Flask",
+    "Data Science"
+  ],
+  "description": "Comprehensive Python certification covering web development, data science, and professional development practices.",
+  "link": "https://zerotomastery.io/courses/learn-python/",
+  "hours": 30,
+  "certificate": {
+    "title": "Python Programming Certification",
+    "provider": "Zero to Mastery",
+    "date": "Summer 2025",
+    "imagePath": "/Certificates/python-cert-1.png"
+  }
+}

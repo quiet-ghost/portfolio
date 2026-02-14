@@ -1,0 +1,16 @@
+{
+  "order": 60,
+  "title": "C++ Programming I",
+  "institution": "Gwinnett Technical College",
+  "term": "Spring 2026",
+  "status": "in-progress",
+  "kind": "course",
+  "skills": [
+    "Syntax",
+    "Data Types",
+    "Algorithms",
+    "Procedural Programming",
+    "Object-Oriented Programming"
+  ],
+  "description": "Basic C++ concepts, simple I/O and expressions, I/O and control statements, arrays, pointers, structures, managing data, and developing programs."
+}

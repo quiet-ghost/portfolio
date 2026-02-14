@@ -1,0 +1,24 @@
+{
+  "order": 30,
+  "type": "work",
+  "role": "Lead Multimedia / Live Stream Coordinator",
+  "organization": "Journey Church Buford",
+  "location": "Buford, GA",
+  "period": "Jan 2006 - Dec 2022",
+  "highlights": [
+    "Used Pro Presenter, OBS, and related software to run in-person and multi-platform live services.",
+    "Coordinated with church leadership using Google Drive to deliver weekly service needs.",
+    "Troubleshot software, networking, and multimedia workflows across the organization.",
+    "Maintained and organized multimedia social channels, including YouTube and Facebook."
+  ],
+  "technologies": [
+    "Live Streaming",
+    "Pro Presenter",
+    "OBS Studio",
+    "Open Source Software",
+    "Google Drive",
+    "Technical Support",
+    "Social Media Management",
+    "Multimedia Production"
+  ]
+}

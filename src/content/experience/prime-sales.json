@@ -1,0 +1,19 @@
+{
+  "order": 50,
+  "type": "work",
+  "role": "Retail Sales Consultant",
+  "organization": "Prime Communications, AT&T Retailer",
+  "location": "Kennesaw, GA",
+  "period": "Apr 2014 - Dec 2015",
+  "highlights": [
+    "Handled cash and daily point-of-sale operations.",
+    "Supervised team members while helping exceed sales goals.",
+    "Managed end-of-day procedures and deposits.",
+    "Provided customer service and follow-up support."
+  ],
+  "technologies": [
+    "Sales",
+    "POS Systems",
+    "Customer Service"
+  ]
+}

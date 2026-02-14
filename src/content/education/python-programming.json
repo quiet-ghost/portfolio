@@ -1,0 +1,16 @@
+{
+  "order": 30,
+  "title": "Python Programming",
+  "institution": "Gwinnett Technical College",
+  "term": "Spring 2025",
+  "status": "completed",
+  "kind": "course",
+  "skills": [
+    "Python Syntax",
+    "Variables and Data Types",
+    "Control Structures",
+    "Functions",
+    "File I/O"
+  ],
+  "description": "Introduction to programming with Python, covering core programming concepts and practical problem solving."
+}

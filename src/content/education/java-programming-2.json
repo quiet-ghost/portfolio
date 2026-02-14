@@ -1,0 +1,16 @@
+{
+  "order": 60,
+  "title": "Java Programming 2",
+  "institution": "Gwinnett Technical College",
+  "term": "Fall 2025",
+  "status": "completed",
+  "kind": "course",
+  "skills": [
+    "JDBC",
+    "Multithreading",
+    "Socket Programming",
+    "RMI",
+    "Enterprise Patterns"
+  ],
+  "description": "Advanced Java concepts including database connectivity, concurrent programming, and distributed systems."
+}

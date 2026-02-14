@@ -1,0 +1,16 @@
+{
+  "order": 20,
+  "title": "SQL Database Management",
+  "institution": "Gwinnett Technical College",
+  "term": "Spring 2025",
+  "status": "completed",
+  "kind": "course",
+  "skills": [
+    "SQL",
+    "Database Design",
+    "Data Modeling",
+    "MySQL",
+    "Query Optimization"
+  ],
+  "description": "Comprehensive database management covering relational database design, SQL queries, and performance optimization."
+}
