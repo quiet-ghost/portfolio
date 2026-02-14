@@ -36,7 +36,7 @@ const rawSocials = profile.socials as SocialLink[];
 const socialMap = new Map<string, SocialLink>(rawSocials.map((entry) => [entry.label.toLowerCase(), entry]));
 
 if (!socialMap.has("x")) {
-  socialMap.set("x", { label: "X", url: "https://x.com/quietghostdev" });
+  socialMap.set("x", { label: "X", url: "https://x.com/quietghosttv" });
 }
 
 const socials = Array.from(socialMap.values()) as SocialLink[];

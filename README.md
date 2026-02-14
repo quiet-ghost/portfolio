@@ -7,12 +7,12 @@ Portfolio: [quietghost.dev](https://quietghost.dev)
 ## Local
 
 ```bash
-npm run dev
-npm run stage
+bun run dev
+bun run stage
 ```
 
 ## Deploy
 
 ```bash
-npm run deploy
+bun run deploy
 ```

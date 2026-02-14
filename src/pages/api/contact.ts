@@ -5,6 +5,7 @@ export const prerender = false;
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 const TURNSTILE_VERIFY_ENDPOINT =
   "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+const FALLBACK_TO_EMAIL = "ksclafani@quietghost.dev";
 const TURNSTILE_ACTION = "contact_form";
 const DEFAULT_RATE_LIMIT_MAX = 6;
 const DEFAULT_RATE_LIMIT_WINDOW_SECONDS = 600;
@@ -68,8 +69,7 @@ const parseHostnames = (raw: string): string[] =>
     .filter(Boolean);
 
 const getRuntimeEnv = (context: Parameters<APIRoute>[0]): RuntimeEnv => {
-  const runtime = (context.locals as { runtime?: { env?: RuntimeEnv } })
-    .runtime;
+  const runtime = (context.locals as { runtime?: { env?: RuntimeEnv } }).runtime;
   return runtime?.env ?? {};
 };
 
