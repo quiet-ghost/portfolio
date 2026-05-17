@@ -5,12 +5,6 @@
   "term": "Fall 2025",
   "status": "completed",
   "kind": "course",
-  "skills": [
-    "JDBC",
-    "Multithreading",
-    "Socket Programming",
-    "RMI",
-    "Enterprise Patterns"
-  ],
-  "description": "Advanced Java concepts including database connectivity, concurrent programming, and distributed systems."
+  "skills": ["JavaFX", "Scene Builder and FXML", "GUI application development"],
+  "description": "Focused on JavaFX desktop GUI development, emphasizing Scene Builder/FXML workflows, event-driven programming, and building interactive user interfaces."
 }
