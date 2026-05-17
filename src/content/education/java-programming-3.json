@@ -1,0 +1,17 @@
+{
+  "order": 60,
+  "title": "Java Programming 3",
+  "institution": "Gwinnett Technical College",
+  "term": "Summer 2026",
+  "status": "in-progress",
+  "kind": "course",
+  "skills": [
+    "Java Enterprise Edition",
+    "Servlets",
+    "Java Server Pages",
+    "Enterprise JavaBeans",
+    "Web Application Deployment",
+    "Server Setup"
+  ],
+  "description": "Builds Java EE web applications on top of Java SE by installing and configuring web, application, and database servers and developing apps with Servlets, JSP, and Enterprise JavaBeans."
+}

@@ -4,6 +4,8 @@ const STATUS_PRIORITY: Record<EducationData["status"], number> = {
   "in-progress": 0,
   completed: 1,
   upcoming: 2,
+  cancelled: 3,
+  paused: 4,
 };
 
 const SEASON_WEIGHTS: Array<[string, number]> = [
@@ -11,7 +13,6 @@ const SEASON_WEIGHTS: Array<[string, number]> = [
   ["spring", 2],
   ["summer", 3],
   ["fall", 4],
-  ["autumn", 4],
 ];
 
 const getCompletionScore = (entry: EducationData): number => {
@@ -31,13 +32,17 @@ const getCompletionScore = (entry: EducationData): number => {
   return year * 10 + seasonWeight;
 };
 
-export const sortEducationEntries = (entries: EducationData[]): EducationData[] =>
+export const sortEducationEntries = (
+  entries: EducationData[],
+): EducationData[] =>
   [...entries].sort((left, right) => {
-    const statusOrder = STATUS_PRIORITY[left.status] - STATUS_PRIORITY[right.status];
+    const statusOrder =
+      STATUS_PRIORITY[left.status] - STATUS_PRIORITY[right.status];
     if (statusOrder !== 0) return statusOrder;
 
-    const completionOrder = getCompletionScore(right) - getCompletionScore(left);
+    const completionOrder =
+      getCompletionScore(right) - getCompletionScore(left);
     if (completionOrder !== 0) return completionOrder;
 
-    return right.order - left.order;
+    return left.title.localeCompare(right.title);
   });

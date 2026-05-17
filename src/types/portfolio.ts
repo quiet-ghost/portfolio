@@ -60,7 +60,7 @@ export interface EducationData {
   title: string;
   institution: string;
   term: string;
-  status: "completed" | "in-progress" | "upcoming";
+  status: "completed" | "in-progress" | "upcoming" | "cancelled" | "paused";
   kind: "course" | "certification";
   skills: string[];
   description: string;
