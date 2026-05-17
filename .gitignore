@@ -55,3 +55,6 @@ yarn-error.log*
 *.backup
 *.orig
 bun.lock
+
+# Git worktrees
+.worktrees/
