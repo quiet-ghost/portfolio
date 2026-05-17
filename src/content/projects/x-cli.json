@@ -1,0 +1,8 @@
+{
+  "order": 20,
+  "title": "X-CLI",
+  "summary": "A simple TUI application for sending Tweets from the terminal.",
+  "status": "active",
+  "technologies": ["TypeScript", "openTUI", "tmux", "CLI-Tooling"],
+  "repository": "https://github.com/quiet-ghost/x-cli"
+}
