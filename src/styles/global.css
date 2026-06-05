@@ -538,25 +538,6 @@ kbd {
   color: var(--text);
 }
 
-.status-line {
-  width: fit-content;
-  border: 1px solid color-mix(in srgb, var(--pine) 56%, transparent);
-  border-radius: 999px;
-  color: var(--foam);
-  font-size: 0.81rem;
-  padding: 0.18rem 0.44rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.32rem;
-}
-
-.status-dot {
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 50%;
-  background: var(--pine);
-}
-
 .ls-output {
   display: grid;
   gap: 0.24rem;

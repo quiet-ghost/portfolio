@@ -6,7 +6,6 @@ import WindowPool from "@/components/portfolio/WindowPool.astro";
 import type { Keybind, PortfolioClientData, SocialLink } from "@/types/portfolio";
 
 interface Props {
-  availabilityLabel: string;
   email: string;
   location: string;
   resumePath: string;
@@ -15,13 +14,13 @@ interface Props {
   clientData: PortfolioClientData;
 }
 
-const { availabilityLabel, email, location, resumePath, socials, keybinds, clientData } = Astro.props;
+const { email, location, resumePath, socials, keybinds, clientData } = Astro.props;
 const serializedClientData = JSON.stringify(clientData).replace(/</g, "\\u003c");
 ---
 
 <main class="desktop" id="top">
   <TopBar />
-  <MainWorkspace availabilityLabel={availabilityLabel} email={email} />
+  <MainWorkspace email={email} />
   <WindowPool email={email} location={location} resumePath={resumePath} socials={socials} />
 </main>
 

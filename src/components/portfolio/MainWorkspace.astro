@@ -1,10 +1,9 @@
 ---
 interface Props {
-  availabilityLabel: string;
   email: string;
 }
 
-const { availabilityLabel, email } = Astro.props;
+const { email } = Astro.props;
 ---
 
 <section class="layout">
@@ -23,11 +22,6 @@ const { availabilityLabel, email } = Astro.props;
           <p class="line accent" data-output-name></p>
           <p class="line iris" data-output-headline></p>
           <p class="line muted" data-output-about></p>
-
-          <p class="status-line" data-status-line hidden>
-            <span class="status-dot" aria-hidden="true"></span>
-            {availabilityLabel}
-          </p>
 
           <p class="prompt-line" data-ls-prompt hidden>
             <span class="prompt-path">~/dev</span>
