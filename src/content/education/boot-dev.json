@@ -1,0 +1,24 @@
+{
+  "order": 30,
+  "title": "Backend Developer Path (TypeScript)",
+  "institution": "Boot.dev",
+  "term": "Current",
+  "status": "in-progress",
+  "kind": "certification",
+  "skills": [
+    "TypeScript",
+    "JavaScript",
+    "Python",
+    "Data Structures and Algorithms",
+    "REST APIs",
+    "SQL and PostgreSQL",
+    "Authentication and Authorization",
+    "Web Security",
+    "Docker",
+    "Git and Linux",
+    "File Storage and CDNs",
+    "Pub/Sub with RabbitMQ"
+  ],
+  "description": "Project-based backend development curriculum combining computer science foundations in Python with API and server development in TypeScript. Covers relational databases, authentication, web security, file storage, containerization, and message-driven systems through hands-on exercises and portfolio projects.",
+  "link": "https://www.boot.dev/paths/backend?tech=python-typescript"
+}
